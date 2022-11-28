@@ -28,11 +28,10 @@
         <module>product-webapp</module>
         <module>aggregator</module>
         <module>user-authentication-service</module>
-        <module>user-profile-service</module>
-        <module>job-search-service</module>
-        <module>recommendation-service</module>
-        <module>chat-service</module>
-        <module>email-service</module>
+        <module>personal-detail-service</module>
+        <module>skill-service</module>
+        <module>academics-service</module>
+        <module>experience-service</module>
     </modules>
 
     <dependencies>
