@@ -4,6 +4,14 @@ services:
     build: eureka-server/
     container_name: eureka-server
     restart: always
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+#    network_mode: "host"
+=======
+
+>>>>>>> 6105633c1560121736fdc6d317b4896f040e232d
+>>>>>>> 9fd09f970ef2d311992178dd105fa62f208e1491
     hostname: localhost
     ports:
       - 8076:8076
