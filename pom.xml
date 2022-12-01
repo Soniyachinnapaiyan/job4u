@@ -32,6 +32,7 @@
         <module>skill-service</module>
         <module>academics-service</module>
         <module>experience-service</module>
+        <module>profile-service</module>
     </modules>
 
     <dependencies>
