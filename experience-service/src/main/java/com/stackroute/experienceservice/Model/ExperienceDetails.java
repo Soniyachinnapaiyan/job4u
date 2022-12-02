@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExperienceDetails {
-    private Long entityId;
     private String designation;
     private String companyname;
     private String noticeperiod;
