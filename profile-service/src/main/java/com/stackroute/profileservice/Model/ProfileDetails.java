@@ -8,7 +8,7 @@ import lombok.Generated;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
-
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
 @Node
 @Data
 @AllArgsConstructor
@@ -16,14 +16,14 @@ import org.springframework.data.neo4j.core.schema.Node;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = ProfileDetails .class)
 public class ProfileDetails {
     @Id
-    @Generated
+    @GeneratedValue
     private Long entityId;
     private String name;
     private String emailId;
     private String dob;
     private String gender;
     private String location;
-    private long contactnumber;
+    private Long contactnumber;
     private String highest_qualification;
     private String specialization;
     private String institute_name;
