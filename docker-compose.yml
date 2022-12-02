@@ -1,0 +1,39 @@
+version: "3"
+services:
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+#    network_mode: "host"
+=======
+
+>>>>>>> 6105633c1560121736fdc6d317b4896f040e232d
+>>>>>>> 9fd09f970ef2d311992178dd105fa62f208e1491
+    hostname: localhost
+    ports:
+      - 8076:8076
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8086:8086
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8099:8099"
