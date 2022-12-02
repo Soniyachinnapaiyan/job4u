@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -22,6 +23,10 @@ public class UserServiceImpl implements UserService {
 
 
     public User saveUser(User user) throws UserAlreadyExistException {
+        Optional<User> optional= Optional.ofNullable(userRepository.findByEmail(user.getEmail()));
+        if(optional.isPresent()){
+            throw new UserAlreadyExistException("user already exist");
+        }
         user.setEmail(user.getEmail());
         user.setPassword(user.getPassword());
         userRepository.save(user);

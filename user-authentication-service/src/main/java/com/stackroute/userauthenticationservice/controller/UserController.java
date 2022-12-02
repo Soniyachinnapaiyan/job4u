@@ -47,10 +47,9 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity saveUser(@Valid @RequestBody User user) throws UserAlreadyExistException {
         try{
-
             responseEntity=new ResponseEntity(userService.saveUser(user),HttpStatus.CREATED);
         }catch(UserAlreadyExistException e){
-            throw new UserAlreadyExistException();
+            throw new UserAlreadyExistException("User already present");
         }
         return responseEntity;
     }
