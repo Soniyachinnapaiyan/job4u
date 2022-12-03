@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EducationDetails {
+    private String emailId;
     private String highest_qualification;
     private String specialization;
     private String institute_name;

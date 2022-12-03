@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class SkillsDetails {
-
+    private String emailId;
     private String technicalSkills;
     private String otherSkills;
-
-
 }

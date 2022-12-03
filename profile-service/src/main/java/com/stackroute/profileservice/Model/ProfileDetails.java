@@ -16,10 +16,8 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = ProfileDetails .class)
 public class ProfileDetails {
     @Id
-    @GeneratedValue
-    private Long entityId;
-    private String name;
     private String emailId;
+    private String username;
     private String dob;
     private String gender;
     private String location;

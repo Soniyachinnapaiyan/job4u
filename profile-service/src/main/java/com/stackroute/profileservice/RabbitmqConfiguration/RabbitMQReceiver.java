@@ -21,12 +21,12 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
     private static final Logger logger = LoggerFactory.getLogger(RabbitMQReceiver.class);
 
 
-     @RabbitListener(queues = {"personal_queue","skills_queue", "education_queue","experience_queue"})
+     @RabbitListener(queues = {"experience_queue","skills_queue", "education_queue","personal_queue"})
     public void receivedMessageFromPersonalDetail(ProfileDetails profileDetails) {
         //logger.info("Profile Details Received is.. " + profileDetails);
          ProfileDetails n = new ProfileDetails();
         // n.setEntityId(profileDetails.getEntityId());
-         n.setName(profileDetails.getName());
+         n.setUsername(profileDetails.getUsername());
          n.setEmailId(profileDetails.getEmailId());
          n.setDob(profileDetails.getDob());
          n.setGender(profileDetails.getGender());
@@ -46,7 +46,7 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
          n.setCurrentsalary(profileDetails.getCurrentsalary());
          n.setJobprofile(profileDetails.getJobprofile());
          System.out.println(n);
-         System.out.println( this.profileCommandService.addPersonalDetails(n));
+         System.out.println( this.profileCommandService.saveUser(n));
     }
    /* @RabbitListener(queues = "personal_queue")
     public void receivedMessageFromPersonalDetail(PersonalDetail personalDetail) {
