@@ -21,13 +21,14 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
     private static final Logger logger = LoggerFactory.getLogger(RabbitMQReceiver.class);
 
 
-     @RabbitListener(queues = {"experience_queue","skills_queue", "education_queue","personal_queue"})
+     @RabbitListener(queues = {"personal_queue"})
     public void receivedMessageFromPersonalDetail(ProfileDetails profileDetails) {
+
         //logger.info("Profile Details Received is.. " + profileDetails);
          ProfileDetails n = new ProfileDetails();
         // n.setEntityId(profileDetails.getEntityId());
          n.setUsername(profileDetails.getUsername());
-         n.setEmailId(profileDetails.getEmailId());
+         n.setEmail(profileDetails.getEmail());
          n.setDob(profileDetails.getDob());
          n.setGender(profileDetails.getGender());
          n.setLocation(profileDetails.getLocation());
