@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonalDetail {
-    @Id
     private String email;
     private String username;
     private String dob;

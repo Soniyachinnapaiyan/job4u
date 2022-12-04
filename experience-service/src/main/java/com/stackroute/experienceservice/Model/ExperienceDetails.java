@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExperienceDetails {
-    private String emailId;
+    private String email;
     private String designation;
     private String companyname;
     private String noticeperiod;

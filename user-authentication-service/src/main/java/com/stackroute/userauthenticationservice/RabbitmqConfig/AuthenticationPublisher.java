@@ -23,6 +23,9 @@ public class AuthenticationPublisher {
     public void sendMessageToRabbitMq(String email) {
 
         rabbitTemplate1.convertAndSend(MessageConfig.EXCHANGE,MessageConfig.ROUTING_KEY,email);
+        rabbitTemplate1.convertAndSend(MessageConfig.EXCHANGE1,MessageConfig.ROUTING_KEY1,email);
+        rabbitTemplate1.convertAndSend(MessageConfig.EXCHANGE2,MessageConfig.ROUTING_KEY2,email);
+        rabbitTemplate1.convertAndSend(MessageConfig.EXCHANGE3,MessageConfig.ROUTING_KEY3,email);
 
     }
 }

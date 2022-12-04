@@ -3,6 +3,7 @@ package com.stackroute.profileservice.RabbitmqConfiguration;
 
 
 import com.stackroute.profileservice.Model.ProfileDetails;
+import com.stackroute.profileservice.Repository.ProfileRepo;
 import com.stackroute.profileservice.Service.ProfileCommandService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;
@@ -12,43 +13,51 @@ import org.springframework.stereotype.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Optional;
+
 
 @Component
 public class RabbitMQReceiver implements RabbitListenerConfigurer {
 
     @Autowired
+    ProfileRepo profileRepo;
+    @Autowired
     ProfileCommandService profileCommandService;
     private static final Logger logger = LoggerFactory.getLogger(RabbitMQReceiver.class);
 
 
-     @RabbitListener(queues = {"personal_queue"})
+     @RabbitListener(queues = "personal_queue")
     public void receivedMessageFromPersonalDetail(ProfileDetails profileDetails) {
+        logger.info("Profile Details Received is.. " + profileDetails);
+         //ProfileDetails n = new ProfileDetails();
+         //if(profileDetails.getEmail().equals(n.getEmail()))
+       /*  Optional<ProfileDetails> optional= Optional.ofNullable(profileRepo.findUserByEmail(profileDetails.getEmail()));
+         if(optional.isPresent()){
+         }
+         else {*/
+         /*    n.setUsername(profileDetails.getUsername());
+             n.setEmail(profileDetails.getEmail());
+             n.setDob(profileDetails.getDob());
+             n.setGender(profileDetails.getGender());
+             n.setLocation(profileDetails.getLocation());
+             n.setContactnumber(profileDetails.getContactnumber());
+             n.setHighest_qualification(profileDetails.getHighest_qualification());
+             n.setSpecialization(profileDetails.getSpecialization());
+             n.setInstitute_name(profileDetails.getInstitute_name());
+             n.setPassing_year(profileDetails.getPassing_year());
+             n.setCgpa(profileDetails.getCgpa());
+             n.setTechnicalSkills(profileDetails.getTechnicalSkills());
+             n.setOtherSkills(profileDetails.getOtherSkills());
+             n.setDesignation(profileDetails.getDesignation());
+             n.setCompanyname(profileDetails.getCompanyname());
+             n.setNoticeperiod(profileDetails.getNoticeperiod());
+             n.setTotalexperience(profileDetails.getTotalexperience());
+             n.setCurrentsalary(profileDetails.getCurrentsalary());
+             n.setJobprofile(profileDetails.getJobprofile());
+             System.out.println(n);
+             System.out.println(this.profileCommandService.saveUser(n));*/
+         }
 
-        //logger.info("Profile Details Received is.. " + profileDetails);
-         ProfileDetails n = new ProfileDetails();
-        // n.setEntityId(profileDetails.getEntityId());
-         n.setUsername(profileDetails.getUsername());
-         n.setEmail(profileDetails.getEmail());
-         n.setDob(profileDetails.getDob());
-         n.setGender(profileDetails.getGender());
-         n.setLocation(profileDetails.getLocation());
-         n.setContactnumber(profileDetails.getContactnumber());
-         n.setHighest_qualification(profileDetails.getHighest_qualification());
-         n.setSpecialization(profileDetails.getSpecialization());
-         n.setInstitute_name(profileDetails.getInstitute_name());
-         n.setPassing_year(profileDetails.getPassing_year());
-         n.setCgpa(profileDetails.getCgpa());
-         n.setTechnicalSkills(profileDetails.getTechnicalSkills());
-         n.setOtherSkills(profileDetails.getOtherSkills());
-         n.setDesignation(profileDetails.getDesignation());
-         n.setCompanyname(profileDetails.getCompanyname());
-         n.setNoticeperiod(profileDetails.getNoticeperiod());
-         n.setTotalexperience(profileDetails.getTotalexperience());
-         n.setCurrentsalary(profileDetails.getCurrentsalary());
-         n.setJobprofile(profileDetails.getJobprofile());
-         System.out.println(n);
-         System.out.println( this.profileCommandService.saveUser(n));
-    }
    /* @RabbitListener(queues = "personal_queue")
     public void receivedMessageFromPersonalDetail(PersonalDetail personalDetail) {
 

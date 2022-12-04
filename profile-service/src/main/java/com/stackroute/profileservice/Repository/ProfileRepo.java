@@ -11,7 +11,7 @@ import java.util.List;
 public interface ProfileRepo extends Neo4jRepository<ProfileDetails,String> {
 
     @Query("MATCH(u:ProfileDetails {emailId:$email}) RETURN u")
-    List<ProfileDetails> findUserByEmail(String emailId);
+    ProfileDetails findUserByEmail(String emailId);
     @Query("MATCH (a:ProfileDetails{name:$name}),(b:Location{Hydrebad:$Hydrebad}) MERGE (a)-[r:locationof]->(b)")
     void createInterestRelationshipWithLoanDetails(String name, String location);
 
