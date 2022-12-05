@@ -12,7 +12,16 @@ public class ExperienceDetails {
     private String designation;
     private String companyname;
     private String noticeperiod;
-    private String totalexperience;
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    private String experience;
     private Double currentsalary;
     private String jobprofile;
 
@@ -48,13 +57,7 @@ public class ExperienceDetails {
         this.noticeperiod = noticeperiod;
     }
 
-    public String getTotalexperience() {
-        return totalexperience;
-    }
 
-    public void setTotalexperience(String totalexperience) {
-        this.totalexperience = totalexperience;
-    }
 
     public Double getCurrentsalary() {
         return currentsalary;

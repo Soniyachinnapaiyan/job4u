@@ -38,12 +38,23 @@ public class ProfileCommandService {
     }*/
 
     public void createUserCityRelation(String email, String location){
-       //List<ProfileDetails> cities=profileRepo.findCity(cityName);
-      //  if(cities.size()==0){
-          //  City cityNode=new City();
-          //  cityNode.setCityName(cityName);
-           // cityRepository.save(cityNode);
-       // }
+        System.out.println(email);
+        System.out.println(location);
         profileRepo.createLocationRelationshipWithPersonalDetails(email, location);
+    }
+    public void createUserSkillRelation(String email, String skill){
+        System.out.println(email);
+        System.out.println(skill);
+        profileRepo.createSkillRelationshipWithPersonalDetails(email, skill);
+    }
+    public void createUserExperienceRelation(String email, String experience){
+        System.out.println(email);
+        System.out.println(experience);
+        profileRepo.createExperienceRelationshipWithPersonalDetails(email, experience);
+    }
+    public void createUserGenderRelation(String email, String gender){
+        System.out.println(email);
+        System.out.println(gender);
+        profileRepo.createGenderRelationshipWithPersonalDetails(email, gender);
     }
 }

@@ -94,7 +94,7 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
             n.setDesignation(profileDetails.getDesignation());
             n.setCompanyname(profileDetails.getCompanyname());
             n.setNoticeperiod(profileDetails.getNoticeperiod());
-            n.setTotalexperience(profileDetails.getTotalexperience());
+            n.setExperience(profileDetails.getExperience());
             n.setCurrentsalary(profileDetails.getCurrentsalary());
             n.setJobprofile(profileDetails.getJobprofile());
             profileRepo.save(n);
@@ -139,7 +139,7 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
          else {*/
         if (n1.isPresent()) {
             ProfileDetails n = n1.get();
-            n.setTechnicalSkills(profileDetails.getTechnicalSkills());
+            n.setSkill(profileDetails.getSkill());
             n.setOtherSkills(profileDetails.getOtherSkills());
             profileRepo.save(n);
         }

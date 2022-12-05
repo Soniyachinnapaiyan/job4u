@@ -9,12 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-<<<<<<< HEAD
+//<<<<<<< HEAD
 @EnableEurekaClient
-=======
+//=======
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = PersonalDetail.class)
 @EnableAutoConfiguration(exclude={org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration.class})
->>>>>>> d6ff24324c154e7f2ed0c0e46162f8c8985cb54a
+//>>>>>>> d6ff24324c154e7f2ed0c0e46162f8c8985cb54a
 public class PersonalDetailServiceApplication {
 
 	public static void main(String[] args) {

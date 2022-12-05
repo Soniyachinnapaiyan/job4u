@@ -1,6 +1,7 @@
 package com.stackroute.profileservice.Controller;
 
 import com.stackroute.profileservice.Model.ProfileDetails;
+import com.stackroute.profileservice.Repository.ProfileRepo;
 import com.stackroute.profileservice.Service.ProfileCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,8 @@ public class ProfileCommandController {
 
     @Autowired
     private ProfileCommandService profileCommandService;
-
+    @Autowired
+    private ProfileRepo profileRepo;
     @PostMapping("/user")
     public ResponseEntity<?> createUser(@RequestBody ProfileDetails profileDetails)  {
 
@@ -25,11 +27,17 @@ public class ProfileCommandController {
     }
 
     @PostMapping("/userRelation")
-    public ResponseEntity<?> createUserCityRelation(ProfileDetails  profileDetails) {
+    public ResponseEntity<?> createUserCityRelation(@RequestBody ProfileDetails  profileDetails) {
 
 //        User users=gson.fromJson(user,User.class);
 //        String u=userService.createUserNode(users);
+        //profileRepo.save(profileDetails);
+        profileCommandService.saveUser(profileDetails);
+        System.out.println("Node created");
         profileCommandService.createUserCityRelation(profileDetails.getEmail(), profileDetails.getLocation());
+        profileCommandService.createUserSkillRelation(profileDetails.getEmail(), profileDetails.getSkill());
+        profileCommandService.createUserGenderRelation(profileDetails.getEmail(), profileDetails.getGender());
+        profileCommandService.createUserExperienceRelation(profileDetails.getEmail(), profileDetails.getExperience());
         return new ResponseEntity<>(profileDetails, HttpStatus.CREATED);
     }
 
@@ -44,5 +52,6 @@ public class ProfileCommandController {
         this.profileCommandService.addNode(profileDetails);
         return new ResponseEntity<>("Profile Details added...", HttpStatus.OK);
     }*/
+
 
 }
