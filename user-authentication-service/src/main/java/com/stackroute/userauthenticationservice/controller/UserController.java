@@ -2,6 +2,7 @@ package com.stackroute.userauthenticationservice.controller;
 
 
 
+import com.stackroute.userauthenticationservice.RabbitmqConfig.AuthenticationPublisher;
 import com.stackroute.userauthenticationservice.config.JWTTokenGenerator;
 import com.stackroute.userauthenticationservice.domain.User;
 import com.stackroute.userauthenticationservice.exception.UserAlreadyExistException;
@@ -22,6 +23,8 @@ public class UserController {
 
 //    @Autowired
 //    private AuthenticationManager authenticationManager;
+    @Autowired
+    AuthenticationPublisher rabbitMQSender;
 
     @Autowired
     private UserService userService;
@@ -43,15 +46,14 @@ public class UserController {
 
     }
 
-
     @PostMapping("/register")
     public ResponseEntity saveUser(@Valid @RequestBody User user) throws UserAlreadyExistException {
         try{
-
             responseEntity=new ResponseEntity(userService.saveUser(user),HttpStatus.CREATED);
         }catch(UserAlreadyExistException e){
-            throw new UserAlreadyExistException();
+            throw new UserAlreadyExistException("User already present");
         }
+        rabbitMQSender.sendMessageToRabbitMq(user.getEmail());
         return responseEntity;
     }
 

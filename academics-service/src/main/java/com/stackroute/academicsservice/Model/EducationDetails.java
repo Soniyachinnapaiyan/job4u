@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EducationDetails {
-    private Long entityId;
+    private String email;
     private String highest_qualification;
     private String specialization;
     private String institute_name;

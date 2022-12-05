@@ -1,4 +1,4 @@
-package com.stackroute.experienceservice.Configuration;
+package com.stackroute.personaldetailservice.Config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,13 +19,13 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.util.ErrorHandler;
 
+
 @Configuration
 @EnableRabbit
 public class MessageConfig {
-    public static final String QUEUE ="experience_queue";
-    public static final String EXCHANGE ="experience_queue";
-    public static final String ROUTING_KEY ="experience_queue";
-
+    public static final String QUEUE ="personal_queue";
+    public static final String EXCHANGE="peronsal_exchange";
+    public static final String ROUTING_KEY="personal_routingkey";
     @Value("${rabbitmq.username}")
     private String username;
 

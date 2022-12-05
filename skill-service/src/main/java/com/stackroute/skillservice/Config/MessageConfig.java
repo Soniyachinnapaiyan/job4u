@@ -1,5 +1,11 @@
 package com.stackroute.skillservice.Config;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
+import org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler;
+import org.springframework.amqp.rabbit.support.ListenerExecutionFailedException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,10 +19,12 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.ErrorHandler;
 
 @Configuration
+@EnableRabbit
 public class   MessageConfig {
-    public static final String QUEUE = "skills_queue";
+    public static final String QUEUE = "personal_queue";
     public static final String EXCHANGE = "skills_exchange";
     public static final String ROUTING_KEY = "skills_routingkey";
 
@@ -75,6 +83,38 @@ public class   MessageConfig {
     @Bean
     public AmqpAdmin amqpAdmin() {
         return new RabbitAdmin(connectionFactory());
+    }
+
+
+    @Bean
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory() {
+        final SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
+        factory.setConnectionFactory(connectionFactory());
+        factory.setMessageConverter(jsonMessageConverter());
+        factory.setErrorHandler(errorHandler());
+        return factory;
+    }
+
+    @Bean
+    public ErrorHandler errorHandler() {
+        return new ConditionalRejectingErrorHandler(new MyFatalExceptionStrategy());
+    }
+
+    public static class MyFatalExceptionStrategy extends ConditionalRejectingErrorHandler.DefaultExceptionStrategy {
+
+        private final Logger logger = LogManager.getLogger(getClass());
+
+        @Override
+        public boolean isFatal(Throwable t) {
+            if (t instanceof ListenerExecutionFailedException) {
+                ListenerExecutionFailedException lefe = (ListenerExecutionFailedException) t;
+                logger.error("Failed to process inbound message from queue "
+                        + lefe.getFailedMessage().getMessageProperties().getConsumerQueue()
+                        + "; failed message: " + lefe.getFailedMessage(), t);
+            }
+            return super.isFatal(t);
+        }
+
     }
 }
 
