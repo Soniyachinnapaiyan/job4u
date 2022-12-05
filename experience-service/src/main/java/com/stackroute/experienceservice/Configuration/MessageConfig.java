@@ -22,7 +22,7 @@ import org.springframework.util.ErrorHandler;
 @Configuration
 @EnableRabbit
 public class MessageConfig {
-    public static final String QUEUE ="personal_queue";
+    public static final String QUEUE ="experience_queue";
     public static final String EXCHANGE ="experience_queue";
     public static final String ROUTING_KEY ="experience_queue";
 

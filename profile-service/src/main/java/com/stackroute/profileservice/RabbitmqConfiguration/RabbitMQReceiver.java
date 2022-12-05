@@ -26,22 +26,40 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
     private static final Logger logger = LoggerFactory.getLogger(RabbitMQReceiver.class);
 
 
-     @RabbitListener(queues = "personal_queue")
+    @RabbitListener(queues = "authentication_queue")
+    public void receivedMessageFromPersonalDetail(String email) {
+        ProfileDetails n = new ProfileDetails();
+        n.setEmail(email);
+        System.out.println("email is received" + email);
+        profileRepo.save(n);
+        //logger.info("Profile Details Received is.. " + personalDetail);
+        //   System.out.println( this.profileCommandService.saveUser(n));
+    }
+
+    @RabbitListener(queues = "personal_queue")
     public void receivedMessageFromPersonalDetail(ProfileDetails profileDetails) {
+        System.out.println(profileDetails.toString());
+        Optional<ProfileDetails> n1 = profileRepo.findById(profileDetails.getEmail());
+
         logger.info("Profile Details Received is.. " + profileDetails);
-         //ProfileDetails n = new ProfileDetails();
-         //if(profileDetails.getEmail().equals(n.getEmail()))
+        //ProfileDetails n = new ProfileDetails();
+        //if(profileDetails.getEmail().equals(n.getEmail()))
        /*  Optional<ProfileDetails> optional= Optional.ofNullable(profileRepo.findUserByEmail(profileDetails.getEmail()));
          if(optional.isPresent()){
          }
          else {*/
-         /*    n.setUsername(profileDetails.getUsername());
-             n.setEmail(profileDetails.getEmail());
-             n.setDob(profileDetails.getDob());
-             n.setGender(profileDetails.getGender());
-             n.setLocation(profileDetails.getLocation());
-             n.setContactnumber(profileDetails.getContactnumber());
-             n.setHighest_qualification(profileDetails.getHighest_qualification());
+        if (n1.isPresent()) {
+
+            ProfileDetails n = n1.get();
+            n.setUsername(profileDetails.getUsername());
+//             n.setEmail(profileDetails.getEmail());
+            n.setDob(profileDetails.getDob());
+            n.setGender(profileDetails.getGender());
+            n.setLocation(profileDetails.getLocation());
+            n.setContactnumber(profileDetails.getContactnumber());
+            profileRepo.save(n);
+        }
+            /* n.setHighest_qualification(profileDetails.getHighest_qualification());
              n.setSpecialization(profileDetails.getSpecialization());
              n.setInstitute_name(profileDetails.getInstitute_name());
              n.setPassing_year(profileDetails.getPassing_year());
@@ -56,7 +74,34 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
              n.setJobprofile(profileDetails.getJobprofile());
              System.out.println(n);
              System.out.println(this.profileCommandService.saveUser(n));*/
+    }
+
+    @RabbitListener(queues = "experience_queue")
+    public void receivedMessageFromExperience(ProfileDetails profileDetails) {
+        System.out.println(profileDetails.toString());
+        Optional<ProfileDetails> n1 = profileRepo.findById(profileDetails.getEmail());
+
+        logger.info("Profile Details Received is.. " + profileDetails);
+        //ProfileDetails n = new ProfileDetails();
+        //if(profileDetails.getEmail().equals(n.getEmail()))
+       /*  Optional<ProfileDetails> optional= Optional.ofNullable(profileRepo.findUserByEmail(profileDetails.getEmail()));
+         if(optional.isPresent()){
          }
+         else {*/
+        if (n1.isPresent()) {
+
+            ProfileDetails n = n1.get();
+            n.setDesignation(profileDetails.getDesignation());
+            n.setCompanyname(profileDetails.getCompanyname());
+            n.setNoticeperiod(profileDetails.getNoticeperiod());
+            n.setTotalexperience(profileDetails.getTotalexperience());
+            n.setCurrentsalary(profileDetails.getCurrentsalary());
+            n.setJobprofile(profileDetails.getJobprofile());
+            profileRepo.save(n);
+        }
+    }
+
+
 
    /* @RabbitListener(queues = "personal_queue")
     public void receivedMessageFromPersonalDetail(PersonalDetail personalDetail) {
