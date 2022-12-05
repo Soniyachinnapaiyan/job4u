@@ -12,7 +12,9 @@ public interface ProfileRepo extends Neo4jRepository<ProfileDetails,String> {
 
     @Query("MATCH(u:ProfileDetails {emailId:$email}) RETURN u")
     ProfileDetails findUserByEmail(String emailId);
-    @Query("MATCH (a:ProfileDetails{name:$name}),(b:Location{Hydrebad:$Hydrebad}) MERGE (a)-[r:locationof]->(b)")
-    void createInterestRelationshipWithLoanDetails(String name, String location);
+
+
+    @Query("OPTIONAL MATCH (a:ProfileDetails{email:$email}),(b:Location{location:$location}) MERGE (a)-[r:loc_of]->(b)")
+    void createLocationRelationshipWithPersonalDetails(String email, String location);
 
 }

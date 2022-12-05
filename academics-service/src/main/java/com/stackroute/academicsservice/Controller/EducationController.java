@@ -15,6 +15,7 @@ public class EducationController {
     EducationPublisher rabbitMQSender;
     @PostMapping(value = "/sender")
     public String producer(@RequestBody EducationDetails educationDetails) {
+
         rabbitMQSender.sendMessageToRabbitMq(educationDetails);
         return "Message sent to the RabbitMQ Queue Successfully";
     }

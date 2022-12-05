@@ -33,7 +33,17 @@ public class ProfileCommandService {
 
     public void addNode(ProfileDetails profileDetails) {
         profileRepo.save(profileDetails);
-        profileRepo.createInterestRelationshipWithLoanDetails(profileDetails.getName(),profileDetails.getLocation());
+        profileRepo.createInterestRelationshipWithLoanDetails(profileDetails.,profileDetails.getLocation());
 
     }*/
+
+    public void createUserCityRelation(String email, String location){
+       //List<ProfileDetails> cities=profileRepo.findCity(cityName);
+      //  if(cities.size()==0){
+          //  City cityNode=new City();
+          //  cityNode.setCityName(cityName);
+           // cityRepository.save(cityNode);
+       // }
+        profileRepo.createLocationRelationshipWithPersonalDetails(email, location);
+    }
 }

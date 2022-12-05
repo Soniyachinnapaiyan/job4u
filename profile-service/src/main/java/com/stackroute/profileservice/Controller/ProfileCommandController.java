@@ -24,6 +24,15 @@ public class ProfileCommandController {
         return new ResponseEntity<>(u, HttpStatus.CREATED);
     }
 
+    @PostMapping("/userRelation")
+    public ResponseEntity<?> createUserCityRelation(ProfileDetails  profileDetails) {
+
+//        User users=gson.fromJson(user,User.class);
+//        String u=userService.createUserNode(users);
+        profileCommandService.createUserCityRelation(profileDetails.getEmail(), profileDetails.getLocation());
+        return new ResponseEntity<>(profileDetails, HttpStatus.CREATED);
+    }
+
    /* @PostMapping("/create")
     public String addProfileDetails(@RequestBody ProfileDetails profileDetails){
         profileCommandService.addPersonalDetails(profileDetails);
