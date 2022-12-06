@@ -13,4 +13,5 @@ public class SkillsDetails {
     private String email;
     private String skill;
     private String otherSkills;
+    private String skilllevel;
 }
