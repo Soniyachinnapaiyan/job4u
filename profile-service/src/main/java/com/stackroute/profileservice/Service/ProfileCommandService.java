@@ -33,7 +33,28 @@ public class ProfileCommandService {
 
     public void addNode(ProfileDetails profileDetails) {
         profileRepo.save(profileDetails);
-        profileRepo.createInterestRelationshipWithLoanDetails(profileDetails.getName(),profileDetails.getLocation());
+        profileRepo.createInterestRelationshipWithLoanDetails(profileDetails.,profileDetails.getLocation());
 
     }*/
+
+    public void createUserCityRelation(String email, String location){
+        System.out.println(email);
+        System.out.println(location);
+        profileRepo.createLocationRelationshipWithPersonalDetails(email, location);
+    }
+    public void createUserSkillRelation(String email, String skill){
+        System.out.println(email);
+        System.out.println(skill);
+        profileRepo.createSkillRelationshipWithPersonalDetails(email, skill);
+    }
+    public void createUserExperienceRelation(String email, String experience){
+        System.out.println(email);
+        System.out.println(experience);
+        profileRepo.createExperienceRelationshipWithPersonalDetails(email, experience);
+    }
+    public void createUserGenderRelation(String email, String gender){
+        System.out.println(email);
+        System.out.println(gender);
+        profileRepo.createGenderRelationshipWithPersonalDetails(email, gender);
+    }
 }

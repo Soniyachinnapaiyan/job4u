@@ -5,9 +5,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
 
+
+
 server:
   port: 8086
 
 spring:
   application:
-    name: "api-gateway"
+    name: api-gateway
+

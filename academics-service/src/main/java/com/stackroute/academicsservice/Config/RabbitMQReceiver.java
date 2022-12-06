@@ -15,12 +15,12 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
 
     private static final Logger logger = LoggerFactory.getLogger(RabbitMQReceiver.class);
 
-     @RabbitListener(queues ="authentication_queue")
-    public void receivedMessageFromPersonalDetail(String email) {
-         EducationDetails n = new EducationDetails();
-           n.setEmail(email);
+   //  @RabbitListener(queues ="authentication_queue")
+   // public void receivedMessageFromPersonalDetail(String email) {
+       //  EducationDetails n = new EducationDetails();
+        //   n.setEmail(email);
          //System.out.println( this.profileCommandService.saveUser(n));
-    }
+  //  }
 
     @Override
     public void configureRabbitListeners(RabbitListenerEndpointRegistrar rabbitListenerEndpointRegistrar) {

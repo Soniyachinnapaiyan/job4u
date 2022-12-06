@@ -27,12 +27,12 @@ public class ProfileDetails {
     private String institute_name;
     private Integer passing_year;
     private Double cgpa;
-    private String technicalSkills;
+    private String skill;
     private String otherSkills;
     private String designation;
     private String companyname;
     private String noticeperiod;
-    private String totalexperience;
+    private String experience;
     private Double currentsalary;
     private String jobprofile;
 

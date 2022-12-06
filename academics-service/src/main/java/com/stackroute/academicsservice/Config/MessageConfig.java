@@ -24,7 +24,7 @@ import org.springframework.util.ErrorHandler;
 @Configuration
 @EnableRabbit
 public class MessageConfig {
-    public static final String QUEUE = "personal_queue";
+    public static final String QUEUE = "academic_queue";
     public static final String EXCHANGE = "education_exchange";
     public static final String ROUTING_KEY = "education_routing_key";
 
