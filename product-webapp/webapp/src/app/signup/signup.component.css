@@ -1,0 +1,30 @@
+.parent{display:flex}
+
+.full-width{width: 100%;}
+
+.top-padding{padding-top: 3px;}
+
+.margin-left mat-radio-button:not(:first-child){margin-left:10px;}
+h2,p{color: aliceblue;}
+p{
+    margin-top:9px ;
+}
+.container-x{ margin-top:100px; margin-left:200px; margin-right: 50px;}
+img{
+    height: 500px;
+    width: 500px;
+}
+mat-card{
+    width: 400px;
+    background:none;
+    border-radius: 35px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+a{
+    color:coral;
+    font-weight:bold;
+}
+.container-z{ margin: 140px 10px 0 10px; }
+@media screen and (min-width: 375px) { 
+    
+}
