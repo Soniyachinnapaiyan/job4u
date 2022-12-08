@@ -54,11 +54,15 @@ export class SignupComponent implements OnInit{
       password == "" ||
       cpassword == ""
     ) {
-      console.log("Fields cannot be empty!")
+        alert("Fields cannot be empty!")
      
     } 
     else if (password != cpassword) {
-      console.log("password must be same")
+      alert("password must be same")
+    }
+    else if (this.checked != false){
+      alert("Accept terms and conditions")
+
     }
       
    
@@ -69,7 +73,7 @@ export class SignupComponent implements OnInit{
 
       this.registerService.registerApi(this.user).subscribe(
         (data) => {
-          console.log("Successfully done !!", "User is Registered ", "success");
+          alert("Successfully Registered !!");
          
         },
         error => (console.log(error)),
@@ -77,7 +81,7 @@ export class SignupComponent implements OnInit{
      );
 
 
-      //this.router.navigate(["/login"]);
+      this.router.navigate(["/login"]);
     }
   }
   checked = false;
