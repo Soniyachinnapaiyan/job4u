@@ -24,12 +24,18 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { TopnavbarComponent } from './topnavbar/topnavbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    TopnavbarComponent,
+    FooterComponent,
+    PersonalDetailsComponent
   ],
   imports: [
     MatCheckboxModule,
