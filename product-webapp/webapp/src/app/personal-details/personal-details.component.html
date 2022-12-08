@@ -1,7 +1,11 @@
 <app-topnavbar></app-topnavbar>
-<div class="p1" fxLayout="row wrap" fxLayoutAlign="center center">
+<div class="p1" fxLayout="row" fxLayoutAlign="center center">
+    <div class="example-ripple-container mat-elevation-z4" matRipple [matRippleCentered]="centered"
+        [matRippleRadius]="66" routerLink="/fill-details">
+        <mat-icon></mat-icon>
+    </div>
     <div class="contain-content" fxFlex="60%" fxFlex.xs="100%" fxLayoutAlign="center center">
-        <div class="part-prime" fxFlex="75%" fxFlex.xs="85%">
+        <div class="part-prime" fxFlex="75%" fxFlex.xs="90%">
             <form class="form-container">
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
@@ -57,6 +61,10 @@
                 </mat-card>
             </form>
         </div>
+    </div>
+    <div class="example-ripple-container mat-elevation-z4" matRipple [matRippleCentered]="centered"
+        [matRippleRadius]="66" routerLink="/education-details">
+        <mat-icon><span> arrow_forward_ios</span></mat-icon>
     </div>
 </div>
 <app-footer></app-footer>

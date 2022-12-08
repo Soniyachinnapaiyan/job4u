@@ -27,6 +27,8 @@ import { LoginComponent } from './login/login.component';
 import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { EducationDetailsComponent } from './education-details/education-details.component';
+import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     LoginComponent,
     TopnavbarComponent,
     FooterComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    EducationDetailsComponent,
+    ExperienceDetailsComponent
   ],
   imports: [
     MatCheckboxModule,
