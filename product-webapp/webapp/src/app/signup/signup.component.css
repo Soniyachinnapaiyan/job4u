@@ -1,4 +1,9 @@
-.parent{display:flex}
+/* .parent{
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+
+} */
 
 .full-width{width: 100%;}
 
@@ -11,11 +16,11 @@ p{
 }
 .container-x{ margin-top:100px; margin-left:200px; margin-right: 50px;}
 img{
-    height: 500px;
-    width: 500px;
+    height: 110%;
+    width: 110%;
 }
 mat-card{
-    width: 400px;
+    
     background:none;
     border-radius: 35px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -24,7 +29,19 @@ a{
     color:coral;
     font-weight:bold;
 }
-.container-z{ margin: 140px 10px 0 10px; }
-@media screen and (min-width: 375px) { 
+.container-z{
+     display: flex;
+     justify-content: center;
+    align-items: center; 
+    width: auto;
+    margin-top: 40px;
+
+    
+  } 
+@media screen and (max-width: 768px) { 
+    .container-x{
+        display: none;
+    }
     
 }
+

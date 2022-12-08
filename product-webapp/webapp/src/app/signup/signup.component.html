@@ -1,9 +1,10 @@
-<div class="parent">
+<!-- <div class="parent"> -->
     <div class="container-x">
-        <img src="/assets/img/augmented_reality.svg" alt="" srcset="">
+        <img class="signup-img" src="/assets/img/augmented_reality.svg" alt="" srcset="">
     </div>
-    <form [formGroup]="profileForm" class="form-container" fxLayout="row" fxLayoutAlign="center center">
-        <div class="container-z" fxFlex="150%" fxFlex.xs="85%">
+    <div class="container-z" fxFlex="150%" fxFlex.xs="85%">
+    <form [formGroup]="profileForm" class="form-container" fxLayout="row" fxLayoutAlign="center center" (ngSubmit)="saveForm()">
+        
             <mat-card>
                 <mat-card-header fxLayoutAlign="center">
                     <mat-card-title>
@@ -14,17 +15,17 @@
                     <div class="column" fxLayout="column" fxLayoutAlign="center center">
                         <div class="col-md-6">
                             <mat-form-field class="full-width">
-                                <input formControlName="email" matInput placeholder="Email">
+                                <input formControlName="email" [pattern]="emailPattern" matInput placeholder="Email">
                             </mat-form-field>
                         </div>
                         <div class="col-md-6">
                             <mat-form-field class="full-width">
-                                <input type="password" formControlName="password" matInput placeholder="Password">
+                                <input type="password" formControlName="password" [pattern]="passwordPattern" matInput placeholder="Password">
                             </mat-form-field>
                         </div>
                         <div class="col-md-6 top-padding">
                             <mat-form-field class="full-width">
-                                <input type="password" formControlName="confirmpassword" matInput
+                                <input type="password" formControlName="cpassword"[pattern]="passwordPattern" matInput
                                     placeholder="Confirm Password">
                             </mat-form-field>
                         </div>
@@ -38,7 +39,7 @@
 
                 </mat-card-content>
                 <mat-card-actions fxLayoutAlign="center">
-                    <button (click)="saveForm()" mat-raised-button color="primary" routerLink="/education-details">Sign
+                    <button  mat-raised-button color="primary" >Sign
                         Up</button>
                 </mat-card-actions>
                 <div class="col-md-6 top-padding" fxLayoutAlign="center">
@@ -48,7 +49,8 @@
                 </div>
 
             </mat-card>
+        </form>
         </div>
 
-    </form>
-</div>
+  
+<!-- </div> -->
