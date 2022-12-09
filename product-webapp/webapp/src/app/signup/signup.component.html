@@ -20,19 +20,22 @@
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
                                 <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="email"[pattern]="emailPattern" matInput placeholder="Email">
+                                    <input formControlName="email" [pattern]="emailPattern" matInput
+                                        placeholder="Email">
                                     <mat-icon>email</mat-icon>
                                 </div>
                             </mat-form-field>
                             <mat-form-field class="full-width">
                                 <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="password"[pattern]="passwordPattern" type="password" matInput placeholder="Password">
+                                    <input formControlName="password" [pattern]="passwordPattern" type="password"
+                                        matInput placeholder="Password">
                                     <mat-icon>lock</mat-icon>
                                 </div>
                             </mat-form-field>
                             <mat-form-field class="full-width">
                                 <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="cpassword"[pattern]="passwordPattern" type="password" matInput placeholder="Confirm Password">
+                                    <input formControlName="cpassword" [pattern]="passwordPattern" type="password"
+                                        matInput placeholder="Confirm Password">
                                     <mat-icon>lock</mat-icon>
                                 </div>
                             </mat-form-field>
@@ -41,7 +44,7 @@
                                         Service</b> and <b>Privacy Policy</b></p>
                             </mat-checkbox>
                             <mat-card-actions fxLayoutAlign="center">
-                                <button (click)="saveForm()" mat-raised-button color="primary" >Sign
+                                <button (click)="saveForm()" mat-raised-button color="primary">Sign
                                     Up</button>
                             </mat-card-actions>
                             <div>

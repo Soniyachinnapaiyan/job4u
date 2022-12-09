@@ -22,12 +22,18 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { EducationDetailsComponent } from './education-details/education-details.component';
+import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
+import { SkillDetailsComponent } from './skill-details/skill-details.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +42,15 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     LoginComponent,
     TopnavbarComponent,
     FooterComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    EducationDetailsComponent,
+    ExperienceDetailsComponent,
+    SkillDetailsComponent,
+    HomepageComponent
   ],
   imports: [
+    MatTooltipModule,
+    MatSnackBarModule,
     MatCheckboxModule,
     MatRippleModule,
     MatChipsModule,

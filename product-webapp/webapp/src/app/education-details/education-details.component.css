@@ -5,6 +5,7 @@ mat-card{border-radius:35px;background-color: rgb(0, 0, 0,0.5);}
 p{margin-top: 15px;color: aliceblue;}
 h2{color: aliceblue;}
 .full-width{width: 75%;}
+
 .example-ripple-container {
     display: flex;
     cursor: pointer;
@@ -12,9 +13,6 @@ h2{color: aliceblue;}
 }
 @media screen and (max-width: 425px){
     mat-card{
-        margin-top: 2.5px;
-    }
-    mat-radio-group{
-        margin-top: -10px;
+        margin-top: 20px;
     }   
 }
