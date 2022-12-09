@@ -11,3 +11,8 @@ h2{color: aliceblue;}
     cursor: pointer;
     box-shadow: none;
 }
+@media screen and (max-width: 425px){
+    mat-card{
+        margin-top: 20px;
+    }   
+}

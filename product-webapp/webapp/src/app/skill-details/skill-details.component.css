@@ -1,20 +1,18 @@
 .p1{min-height: 95vh;}
 .contain-content{min-height: 90vh;}
-.part-prime{height:550px;}
+.part-prime{height:400px;}
 mat-card{border-radius:35px;background-color: rgb(0, 0, 0,0.5);}
-p{margin-top: 15px;color: aliceblue;}
+p{margin-top:10px;color: aliceblue;}
 h2{color: aliceblue;}
 .full-width{width: 75%;}
+.add-button{margin-bottom: 15px;}
+.select-opt{margin-right: 5px;}
 .example-ripple-container {
     display: flex;
     cursor: pointer;
     box-shadow: none;
 }
 @media screen and (max-width: 425px){
-    mat-card{
-        margin-top: 2.5px;
-    }
-    mat-radio-group{
-        margin-top: -10px;
-    }   
+    mat-card{margin-top: 20px;} 
+    .select-opt{margin-right: 0px;}  
 }
