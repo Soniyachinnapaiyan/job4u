@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   profileForm: FormGroup;
   submitted = false;
   errorMessage:string;
+ 
 
   constructor(private formBuilder: FormBuilder,private loginService:LoginService,private router: Router) {
     this.profileForm=new FormGroup({
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
           alert("Fields cannot be empty!")
        
       } 
-      
+
       // this.submitted = true;
   
       // if (this.form.invalid) {
@@ -67,7 +68,7 @@ export class LoginComponent implements OnInit {
         console.log("validated",data);
           this.profileForm.reset();
           localStorage.setItem("loginEmail",this.loginObj.email);
-        // this.router.navigate(["null"]);
+         this.router.navigate(["/personal-details"]);
       },
       (
         error=>{console.log(error);

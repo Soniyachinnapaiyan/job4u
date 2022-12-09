@@ -2,7 +2,7 @@
 <div class="p1" fxLayout="row wrap" fxLayoutAlign="center center">
     <div class="contain-content" fxFlex="60%" fxFlex.xs="100%" fxLayoutAlign="center center">
         <div class="part-prime" fxFlex="75%" fxFlex.xs="85%">
-            <form class="form-container">
+            <form class="form-container" [formGroup]="profileForm">
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
                         <mat-card-title>
@@ -12,13 +12,13 @@
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
-                                <input formControlName="fullName" matInput placeholder="Full name">
+                                <input formControlName="username" matInput placeholder="Full name">
                             </mat-form-field>
                             <mat-form-field class="full-width">
                                 <input formControlName="email" matInput placeholder="Email">
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="phonenumber" matInput placeholder="Phone Number">
+                                <input formControlName="contactnumber" matInput placeholder="Phone Number">
                             </mat-form-field>
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Select DOB</mat-label>
@@ -28,7 +28,7 @@
                             </mat-form-field>
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Preferred Location</mat-label>
-                                <mat-select formControlName="preffered_location">
+                                <mat-select formControlName="location">
                                     <mat-option *ngFor="let pref_loc of pref_loc" [value]="pref_loc.value">
                                         {{pref_loc.viewValue}}
                                     </mat-option>
@@ -39,10 +39,10 @@
                                     <mat-label class="gen">
                                         <p>Gender:</p>
                                     </mat-label>
-                                    <mat-radio-button value="male" fxLayout="row wrap" color="Secondary">
+                                    <mat-radio-button value="Male" fxLayout="row wrap" color="Secondary">
                                         <p>Male</p>
                                     </mat-radio-button>
-                                    <mat-radio-button value="female" fxLayoutAlign="center">
+                                    <mat-radio-button value="Female" fxLayoutAlign="center">
                                         <p>Female</p>
                                     </mat-radio-button>
                                 </mat-radio-group>
@@ -50,9 +50,7 @@
                         </div>
                     </mat-card-content>
                     <mat-card-actions fxLayoutAlign="center">
-                        <button (click)="saveForm()" mat-raised-button color="primary"
-                            routerLink="/education-details">Save &
-                            Continue</button>
+                        <button (click)="saveForm()" mat-raised-button color="primary">Save & Continue</button>
                     </mat-card-actions>
                 </mat-card>
             </form>

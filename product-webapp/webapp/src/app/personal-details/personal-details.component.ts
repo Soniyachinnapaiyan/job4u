@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import{PersonalDetails} from '../service/personal-details/personal-details';
+import{PersonalDetailsService} from '../service/personal-details/personal-details.service';
 interface Location {
   value: string;
   viewValue: string;
@@ -9,30 +12,61 @@ interface Location {
   templateUrl: './personal-details.component.html',
   styleUrls: ['./personal-details.component.css']
 })
-export class PersonalDetailsComponent {
+export class PersonalDetailsComponent implements OnInit {
   centered = false;
-  constructor(private formBuilder:FormBuilder){}
+  user: PersonalDetails = new PersonalDetails();
+  registerData:PersonalDetailsService;
+
+  contactnumberPattern = new RegExp(
+    /(^$|[0-9]{10})/
+  );
+
+
+
+
+  constructor(private formBuilder:FormBuilder,private personalDetailservice:PersonalDetailsService,private router:Router){}
   pref_loc: Location[] = [
-    {value: 'hyd', viewValue: 'Hyderabad'},
-    {value: 'banglr', viewValue: 'Banglore'},
-    {value: 'chennai', viewValue: 'Chennai'},
+    {value: 'Hyderabad', viewValue: 'Hyderabad'},
+    {value: 'Banglore', viewValue: 'Banglore'},
+    {value: 'Chennai', viewValue: 'Chennai'},
     {value: 'Mumbai', viewValue: 'Mumbai'},
     {value: 'Pune', viewValue: 'Pune'},
     {value: 'Delhi', viewValue: 'Delhi'},
     {value: 'Noida', viewValue: 'Noida'},
     {value: 'Kolkata', viewValue: 'Kolkata'}
   ];
+  
  profileForm = this.formBuilder.group({
-   fullName:['',Validators.required],
+   username:['',Validators.required],
    email:['',Validators.required],
-   address:['',Validators.required],
    dob:['',Validators.required],
    gender:['',Validators.required],
-   phonenumber:['',Validators.required],
-   preffered_location:['',Validators.required]
+   contactnumber:['',Validators.required],
+   location:['',Validators.required]
  });
+
+ ngOnInit():void {
+  // this.email=localStorage.getItem('loginEmail')
+
+}
 
  saveForm(){
    console.log('Form data is ', this.profileForm.value);
+   const {email,username,contactnumber,dob,location,gender}=this.profileForm.value
+   this.user.email=localStorage.getItem('loginEmail')
+   this.user.username=username
+   this.user.contactnumber=contactnumber
+   this.user.dob=dob
+   this.user.location=location
+   this.user.gender=gender
+   this.personalDetailservice.addApi(this.user).subscribe(
+     (data) => {
+       console.log("Personal Details Added SuccessFully!!");
+      
+     },
+     error => (console.log(error)),
+   
+  );
  }
+
 }
