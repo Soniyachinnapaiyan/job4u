@@ -4,6 +4,7 @@ import { EducationDetailsComponent } from './education-details/education-details
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { SignupComponent } from './signup/signup.component';
 import { SkillDetailsComponent } from './skill-details/skill-details.component';
@@ -32,6 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'skill-details', component: SkillDetailsComponent
+  },
+  {
+    path: 'my-profile', component: MyProfileComponent
   }
 ];
 

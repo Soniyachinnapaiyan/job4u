@@ -13,9 +13,9 @@ export class PersonalDetailsComponent {
   centered = false;
   constructor(private formBuilder:FormBuilder){}
   pref_loc: Location[] = [
-    {value: 'hyd', viewValue: 'Hyderabad'},
+    {value: 'Hyderabad', viewValue: 'Hyderabad'},
     {value: 'banglr', viewValue: 'Banglore'},
-    {value: 'chennai', viewValue: 'Chennai'},
+    {value: 'Banglore', viewValue: 'Chennai'},
     {value: 'Mumbai', viewValue: 'Mumbai'},
     {value: 'Pune', viewValue: 'Pune'},
     {value: 'Delhi', viewValue: 'Delhi'},
