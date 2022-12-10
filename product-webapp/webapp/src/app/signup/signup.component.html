@@ -19,32 +19,57 @@
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
-                                <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="email" [pattern]="emailPattern" matInput
-                                        placeholder="Email">
-                                    <mat-icon>email</mat-icon>
-                                </div>
-                            </mat-form-field>
-                            <mat-form-field class="full-width">
+                                
+                                <input matInput placeholder="Email" formControlName="email"
+                                       [errorStateMatcher]="matcher">
+                                
+                                <mat-error *ngIf="profileForm.get('email').hasError && !profileForm.get('email').hasError('required')">
+                                  Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('email').hasError('required')">
+                                  Email is <strong>required</strong>
+                                </mat-error>
+                              </mat-form-field>
+                            <!-- <mat-form-field class="full-width">
                                 <div fxLayoutAlign="space-evenly center">
                                     <input formControlName="password" [pattern]="passwordPattern" type="password"
                                         matInput placeholder="Password">
                                     <mat-icon>lock</mat-icon>
                                 </div>
-                            </mat-form-field>
+                            </mat-form-field> -->
                             <mat-form-field class="full-width">
                                 <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="cpassword" [pattern]="passwordPattern" type="password"
-                                        matInput placeholder="Confirm Password">
-                                    <mat-icon>lock</mat-icon>
-                                </div>
-                            </mat-form-field>
-                            <mat-checkbox class="example-margin">
-                                <p> By Accepting,you agree to <br> <b>Terms of
-                                        Service</b> and <b>Privacy Policy</b></p>
-                            </mat-checkbox>
+                                <input formControlName="password" type="password" matInput  [errorStateMatcher]="passwordErrorStateMatcher" placeholder="Password">
+                                <mat-error *ngIf="profileForm.get('password').hasError('required')">
+                                  Password is required
+                        
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('password').hasError('pattern')">
+                                  Password must be at least 8 charc 
+                                  <!-- acters long and must contain at least one lowercase letter, one uppercase letter, and one digit -->
+                                </mat-error>
+                                <mat-icon>lock</mat-icon>
+                            </div>
+                              </mat-form-field>
+                              <mat-form-field class="full-width">
+                                <div fxLayoutAlign="space-evenly center">
+                                <input formControlName="cpassword" type="password" matInput [errorStateMatcher]="passwordErrorStateMatcher" placeholder="Confirm Password">
+                                <mat-error *ngIf="profileForm.get('password').hasError('required')">
+                                  Password is required
+                        
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('password').hasError('pattern')">
+                                  Password must be at least 8 charc 
+                                  <!-- acters long and must contain at least one lowercase letter, one uppercase letter, and one digit -->
+                                </mat-error>
+                                <mat-icon>lock</mat-icon>
+                            </div>
+                              </mat-form-field>
+                            <mat-checkbox id="checkbox" class="checkbox" color="primary" 
+                            formControlName="checkbox"><p> By Accepting,you agree to <br> <b>Terms of
+                                Service</b> and <b>Privacy Policy</b></p></mat-checkbox>
                             <mat-card-actions fxLayoutAlign="center">
-                                <button (click)="saveForm()" mat-raised-button color="primary">Sign
+                                <button [disabled]="false" (click)="saveForm()" mat-raised-button color="primary">Sign
                                     Up</button>
                             </mat-card-actions>
                             <div>
