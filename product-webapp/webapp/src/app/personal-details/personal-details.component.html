@@ -16,14 +16,21 @@
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
-                                <input formControlName="fullName" matInput placeholder="Full name">
+                                <input formControlName="username" matInput placeholder="Full name">
                             </mat-form-field>
-                            <mat-form-field class="full-width">
+                            <!-- <mat-form-field class="full-width">
                                 <input formControlName="email" matInput placeholder="Email">
-                            </mat-form-field>
+                            </mat-form-field> -->
                             <mat-form-field class="full-width">
-                                <input formControlName="phonenumber" matInput placeholder="Phone Number">
-                            </mat-form-field>
+                                <input matInput placeholder="Phone Numer" formControlName="contactnumber"
+                                   [errorStateMatcher]="matcher"  maxlength="10">
+                                     <mat-error *ngIf="profileForm.get('contactnumber').hasError('required')">
+                                       Phone number is <strong>required</strong>
+                                     </mat-error>
+                                      <mat-error *ngIf="!profileForm.get('contactnumber').hasError('required') &&profileForm.get('contactnumber').hasError('pattern')">
+                                      Please enter valid mumber
+                                     </mat-error>
+                          </mat-form-field>
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Select DOB</mat-label>
                                 <input formControlName="dob" matInput [matDatepicker]="picker">
@@ -32,7 +39,7 @@
                             </mat-form-field>
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Preferred Location</mat-label>
-                                <mat-select formControlName="preffered_location">
+                                <mat-select formControlName="location">
                                     <mat-option *ngFor="let pref_loc of pref_loc" [value]="pref_loc.value">
                                         {{pref_loc.viewValue}}
                                     </mat-option>
@@ -43,10 +50,10 @@
                                     <mat-label class="gen">
                                         <p>Gender:</p>
                                     </mat-label>
-                                    <mat-radio-button value="male" fxLayout="row wrap" color="Secondary">
+                                    <mat-radio-button value="Male" fxLayout="row wrap" color="Secondary">
                                         <p>Male</p>
                                     </mat-radio-button>
-                                    <mat-radio-button value="female" fxLayoutAlign="center">
+                                    <mat-radio-button value="Female" fxLayoutAlign="center">
                                         <p>Female</p>
                                     </mat-radio-button>
                                 </mat-radio-group>
@@ -54,8 +61,7 @@
                         </div>
                     </mat-card-content>
                     <mat-card-actions fxLayoutAlign="center">
-                        <button (click)="saveForm()" mat-raised-button color="primary"
-                            routerLink="/education-details">Save &
+                        <button (click)="saveForm()" mat-raised-button color="primary" > Save &
                             Continue</button>
                     </mat-card-actions>
                 </mat-card>

@@ -10,12 +10,12 @@ import java.util.List;
 @Repository
 public interface ProfileRepo extends Neo4jRepository<ProfileDetails,String> {
 
-   //@Query("MATCH(u:ProfileDetails {emailId:$email}) RETURN u")
-    List<ProfileDetails> findUserByEmail(String email);
+   @Query("MATCH(u:ProfileDetails {email:$email}) RETURN u")
+    ProfileDetails findUserByEmail(String email);
 
     @Query("OPTIONAL MATCH (a:ProfileDetails {email:$email}),(b:location {name:$location}) MERGE (a)-[r:loc_of]->(b)")
    void createLocationRelationshipWithPersonalDetails(String email, String location);
-    @Query(" MATCH (a:ProfileDetails {email:$email}),(b:skill {name:$skill}) MERGE (a)-[r:has_skl{skilllevel:$skilllevel}]->(b)")
+    @Query("  MATCH (a:ProfileDetails {email:$email}),(b:skill {name:$skill}) MERGE (a)-[r:has_skl{skilllevel:$skilllevel}]->(b)")
     void createSkillRelationshipWithPersonalDetails(String email, String skill,String skilllevel);
     @Query("OPTIONAL MATCH (a:ProfileDetails {email:$email}),(b:gender {name:$gender}) MERGE (a)-[r:is_a]->(b)")
     void createGenderRelationshipWithPersonalDetails(String email, String gender);

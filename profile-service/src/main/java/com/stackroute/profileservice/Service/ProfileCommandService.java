@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ProfileCommandService {
+    void deleteUserNode(String email);
     //public String saveUser(ProfileDetails profileDetails) throws ProfileAlreadyExistException;
    // public void createUserCityRelation(String email, String location);
    // public void createUserSkillRelation(String email, String skill);

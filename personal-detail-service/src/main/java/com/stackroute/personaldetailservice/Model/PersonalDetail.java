@@ -14,5 +14,5 @@ public class PersonalDetail {
     private String dob;
     private String gender;
     private String location;
-    private long contactnumber;
+    private String contactnumber;
 }
