@@ -22,7 +22,7 @@ public class ExperienceDetails {
     }
 
     private String experience;
-    private Double currentsalary;
+    private String currentsalary;
     private String jobprofile;
 
     public String getEmail() {
@@ -59,11 +59,11 @@ public class ExperienceDetails {
 
 
 
-    public Double getCurrentsalary() {
+    public String getCurrentsalary() {
         return currentsalary;
     }
 
-    public void setCurrentsalary(Double currentsalary) {
+    public void setCurrentsalary(String currentsalary) {
         this.currentsalary = currentsalary;
     }
 

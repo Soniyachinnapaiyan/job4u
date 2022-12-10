@@ -56,11 +56,33 @@ public class ProfileDetails {
     private String noticeperiod;
     @NotBlank(message = "Please enter experience")
     private String experience;
-    @NotNull(message ="Please enter currentsalary")
-    private Double currentsalary;
+    @NotBlank(message ="Please enter currentsalary")
+    private String currentsalary;
     @NotBlank(message = "Please enter jobprofile")
     private String jobprofile;
     @NotBlank(message = "Please enter skilllevel")
     private String skilllevel;
+
+
+    public ProfileDetails( String email, String location) {
+        super();
+        this.email=email;
+        this.location=location;
+    }
+    public ProfileDetails( String email, String location,String skill,String experience) {
+        super();
+        this.email=email;
+        this.location=location;
+        this.skill=skill;
+        this.experience=experience;
+    }
+    public ProfileDetails( String email,String location, String skill, String experience,String skilllevel) {
+        super();
+        this.email=email;
+        this.location=location;
+        this.skill=skill;
+        this.experience=experience;
+        this.skilllevel=skilllevel;
+    }
 
 }
