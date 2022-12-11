@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+.p1{min-height: 95vh;}
+.contain-content{min-height: 90vh;}
+.part-prime{height:550px;}
+
+.quotes{
+    margin-top: 150px;
+}
+
+.quotes h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: 600;
+}
+=======
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
 
 .p1{min-height:100%;}
@@ -9,3 +24,4 @@ h1{font-family: 'Unbounded', cursive;font-size: 45px; line-height: normal;paddin
 p{padding: 25px 5px 5px 50px;font-family: 'Unbounded', cursive;font-size: 15px; line-height: normal;}
 span{color: aqua;}
 .b{min-height: 20vh;}
+>>>>>>> 2eac1aa3f680936c749cf5a821376ca5fc037031
