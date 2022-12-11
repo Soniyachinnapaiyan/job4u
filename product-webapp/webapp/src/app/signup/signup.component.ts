@@ -1,19 +1,28 @@
 import { Component, OnInit  } from '@angular/core';
 import { RegisterService } from "../service/register/register.service";
 import { UserRegistration } from "../service/register/user-registration";
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid);
+  }
+}
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit{
+
+export class SignupComponent {
+  minPw = 8;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -29,13 +38,21 @@ export class SignupComponent implements OnInit{
     /(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{8,10}/
   );
 
- 
+  matcher = new MyErrorStateMatcher();
+   passwordControl = new FormControl('', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/)]);
 
+  passwordErrorStateMatcher: ErrorStateMatcher = {
+    isErrorState: (control: FormControl) => {
+      return control.dirty && control.invalid;
+    }
+  };
+    
   constructor(private registerService: RegisterService,private router: Router, private formBuilder: FormBuilder,private _snackBar: MatSnackBar){}
- profileForm = this.formBuilder.group({
-    email:['',Validators.required],
+  profileForm = this.formBuilder.group({
+    email:['',Validators.email],
     password:['',Validators.required],
-    cpassword:['',Validators.required]
+    cpassword:['',Validators.required],
+    checkbox: [false]
   });
   
   // get email(): String {
@@ -49,6 +66,7 @@ export class SignupComponent implements OnInit{
   //   return this.profileForm.get('cpassword');
   // }
   ngOnInit():void {
+  
 
   }
   durationInSeconds = 2;
@@ -58,9 +76,9 @@ export class SignupComponent implements OnInit{
     console.log(this.user);
     const {email,password,cpassword}=this.profileForm.value
     if (
-      email == "" ||
-      password == "" ||
-      cpassword == ""
+      email == "" 
+      // password == "" ||
+      // cpassword == ""
     ) {
         // alert("Fields cannot be empty!")
         this._snackBar.open('Fields cannot be empty!', 'close', {
@@ -78,9 +96,9 @@ export class SignupComponent implements OnInit{
         duration: this.durationInSeconds * 1000,
       });
     }
-    else if (this.checked = false){
-      // alert("Accept terms and conditions")
-      this._snackBar.open('Accept Terms and Conditions!', 'close', {
+    
+    else if (!this.profileForm.value.checkbox ){
+        this._snackBar.open('Accept Terms and Conditions!', 'close', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
         duration: this.durationInSeconds * 1000,

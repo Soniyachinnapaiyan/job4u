@@ -2,7 +2,7 @@
 .contain-content{min-height: 90vh;}
 .part-prime{height:550px;}
 mat-card{border-radius:35px;background-color: rgb(0, 0, 0,0.5);}
-p{margin-top: 15px;color: aliceblue;}
+p{margin-top: 15px;    line-height: 30px;color: aliceblue;}
 h2{color: aliceblue;}
 .full-width{width: 75%;}
 

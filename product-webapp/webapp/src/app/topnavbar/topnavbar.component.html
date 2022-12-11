@@ -1,11 +1,23 @@
 <nav class="main-container" fxLayout="row wrap" fxLayoutAlign="center center">
-    <div class="contain-images" fxLayout="row wrap" fxFlex="95%" fxLayoutAlign="space-between center">
+    <div class="contain-images" fxLayout="row" fxFlex="95%" fxLayoutAlign="space-between center">
         <div><img src="/assets/img/logo.png" height=60px></div>
         <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxFlex="50%">
-            <div fxShow fxHide.xs><button mat-raised-button>Home</button></div>
+            <div><button mat-raised-button routerLink="/homepage">Home</button></div>
             <div fxShow fxHide.xs><button mat-raised-button>About Us</button></div>
             <div fxShow fxHide.xs><button mat-raised-button>Contact Us</button></div>
         </div>
-        <div fxLayoutAlign="center center"><img src="/assets/img/avatar.svg" alt="" srcset="" height="60px"></div>
+        <div fxLayoutAlign="center center">
+
+            <button mat-button [matMenuTriggerFor]="beforeMenu" height="100px"><img src="/assets/img/avatar.svg" alt=""
+                    srcset="" height="60px"></button>
+            <mat-menu #beforeMenu="matMenu" height="100px" xPosition="before">
+                <button mat-menu-item routerLink="/my-profile">
+                    <p>My Profile</p>
+                </button>
+                <button mat-menu-item>
+                    <p>Sign Out</p>
+                </button>
+            </mat-menu>
+        </div>
     </div>
 </nav>

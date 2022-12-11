@@ -12,6 +12,11 @@ import java.util.List;
 public class ProfileCommandServiceImpl implements ProfileCommandService {
     @Autowired
     private ProfileRepo profileRepo;
+    @Override
+    public void deleteUserNode(String email) {
+        ProfileDetails data = profileRepo.findUserByEmail(email);
+        profileRepo.delete(data);
+    }
 
    /* public String saveUser(ProfileDetails profileDetails) throws ProfileAlreadyExistException {
         List<ProfileDetails> users=profileRepo.findUserByEmail(profileDetails.getEmail());

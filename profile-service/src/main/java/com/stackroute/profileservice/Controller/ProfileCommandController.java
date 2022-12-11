@@ -20,6 +20,12 @@ public class ProfileCommandController {
     private ProfileCommandServiceImpl profileCommandService;
     @Autowired
     private ProfileRepo profileRepo;
+    @DeleteMapping("/delete/{email}")
+    public ResponseEntity<?> deleteUserNode(@PathVariable String email) {
+        this.profileCommandService.deleteUserNode(email);
+        return new ResponseEntity<>("User is delete successfully", HttpStatus.OK);
+    }
+
 
 
    /* @PostMapping("/user")

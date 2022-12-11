@@ -6,6 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { ProfilesearchComponent } from './profilesearch/profilesearch.component';
 import { SignupComponent } from './signup/signup.component';
@@ -42,7 +43,9 @@ const routes: Routes = [
   {
     path:'profilesearch', component: ProfilesearchComponent
   },
-
+{
+    path: 'my-profile', component: MyProfileComponent
+  },
 ];
 
 @NgModule({
