@@ -24,6 +24,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTableModule} from '@angular/material/table';
 
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -34,6 +35,9 @@ import { EducationDetailsComponent } from './education-details/education-details
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { SkillDetailsComponent } from './skill-details/skill-details.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { MoreinfoComponent } from './moreinfo/moreinfo.component';
+import { ProfilesearchComponent } from './profilesearch/profilesearch.component';
+import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,10 @@ import { HomepageComponent } from './homepage/homepage.component';
     EducationDetailsComponent,
     ExperienceDetailsComponent,
     SkillDetailsComponent,
-    HomepageComponent
+    HomepageComponent,
+    MoreinfoComponent,
+    ProfilesearchComponent,
+    MainHomepageComponent
   ],
   imports: [
     MatTooltipModule,
@@ -72,7 +79,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatDatepickerModule,
     MatButtonModule,
     MatBadgeModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

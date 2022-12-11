@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    left: 37.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightblue;
+    border-radius: 7px 7px 0 0;
+    transition: 0.3s;
+    text-shadow: 2%;
+    
+}
+
+
+    a{
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: none;
+    }
+
+@media screen and (max-width:500px){
+    .example-card {
+        left: 0%;
+    }
+}
