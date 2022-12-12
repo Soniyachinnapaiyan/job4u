@@ -6,6 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 import { SignupComponent } from './signup/signup.component';
 import { SkillDetailsComponent } from './skill-details/skill-details.component';
 
@@ -36,7 +37,10 @@ const routes: Routes = [
   },
   {
     path: 'my-profile', component: MyProfileComponent
-  }
+  },
+  {
+    path: 'send-email',component: SendEmailComponent
+  },
 ];
 
 @NgModule({

@@ -102,6 +102,14 @@ export class LoginComponent implements OnInit {
       },
       (
         error=>{console.log(error);
+          {
+            this._snackBar.open('Invalid Details', 'close', {
+              horizontalPosition: this.horizontalPosition,
+              verticalPosition: this.verticalPosition,
+              duration: this.durationInSeconds * 1000,
+            });
+           
+          }
            this.errorMessage=error.error;
 
         }

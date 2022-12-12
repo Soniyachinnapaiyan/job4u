@@ -12,9 +12,10 @@ public class PersonalController {
     @Autowired
     PersonalProducer rabbitMQSender;
     @PostMapping(value = "/sender")
-    public String producer(@RequestBody PersonalDetail personalDetail) {
+    public void producer(@RequestBody PersonalDetail personalDetail) {
         System.out.println(personalDetail.toString());
         rabbitMQSender.sendMessageToRabbitMq(personalDetail);
-        return "Message sent to the RabbitMQ Queue Successfully";
+        System.out.println("Message sent to the RabbitMQ Queue Successfully");
+//        return "Message sent to the RabbitMQ Queue Successfully";
     }
 }

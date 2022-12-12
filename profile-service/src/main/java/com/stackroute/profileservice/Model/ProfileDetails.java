@@ -44,10 +44,6 @@ public class ProfileDetails {
     private Integer passing_year;
     @NotNull(message = "Please enter cgpa")
     private Double cgpa;
-    @NotBlank(message = "Please enter skill")
-    private String skill;
-    @NotBlank(message = "Please enter otherSkills")
-    private String otherSkills;
     @NotBlank(message = "Please enter designation")
     private String designation;
     @NotBlank(message = "Please enter companyname")
@@ -58,10 +54,18 @@ public class ProfileDetails {
     private String experience;
     @NotBlank(message ="Please enter currentsalary")
     private String currentsalary;
-    @NotBlank(message = "Please enter jobprofile")
-    private String jobprofile;
-    @NotBlank(message = "Please enter skilllevel")
-    private String skilllevel;
+    @NotBlank(message = "Please enter skilllevel1")
+    private String level1;
+    @NotBlank(message = "Please enter skilllevel2")
+    private String level2;
+    @NotBlank(message = "Please enter skilllevel3")
+    private String level3;
+    @NotBlank(message = "Please enter skill1")
+    private String skill1;
+    @NotBlank(message = "Please enter skill2")
+    private String skill2;
+    @NotBlank(message = "Please enter skill3")
+    private String skill3;
 
 
     public ProfileDetails( String email, String location) {
@@ -69,20 +73,20 @@ public class ProfileDetails {
         this.email=email;
         this.location=location;
     }
-    public ProfileDetails( String email, String location,String skill,String experience) {
+    public ProfileDetails( String email, String location,String skill1,String experience) {
         super();
         this.email=email;
         this.location=location;
-        this.skill=skill;
+        this.skill1=skill1;
         this.experience=experience;
     }
-    public ProfileDetails( String email,String location, String skill, String experience,String skilllevel) {
+    public ProfileDetails( String email,String location, String skill1, String experience,String level1) {
         super();
         this.email=email;
         this.location=location;
-        this.skill=skill;
+        this.skill1=skill1;
         this.experience=experience;
-        this.skilllevel=skilllevel;
+        this.level1=level1;
     }
 
 }

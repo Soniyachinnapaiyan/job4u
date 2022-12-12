@@ -37,7 +37,7 @@ import { EducationDetailsComponent } from './education-details/education-details
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { SkillDetailsComponent } from './skill-details/skill-details.component';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { SendEmailComponent } from './send-email/send-email.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 
@@ -53,6 +53,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     ExperienceDetailsComponent,
     SkillDetailsComponent,
     HomepageComponent,
+    SendEmailComponent,
   
     HomeNavbarComponent,
         MyProfileComponent
