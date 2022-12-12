@@ -1,0 +1,22 @@
+.contain-images{min-height: 100vh;}
+.contain-content{min-height: 100vh;}
+.illustrate-view{min-height: 50vh; }
+.logo-view{min-height: 50vh; }
+.part-prime{height: 375px;}
+mat-form-field{display: flex;justify-content: space-between;}
+.example-margin p{font-size: 11px;}
+h2,p{color: aliceblue;}
+a{color:coral;font-weight:bold;}
+mat-card{border-radius: 35px;background-color: rgb(0, 0, 0,0.6);}
+@media screen and (max-width: 1440px){
+    .part-prime{
+        margin-right: 100px;
+    }
+    
+}
+@media screen and (max-width: 425px){
+    .part-prime{
+        margin-right: 0px;
+    }
+    
+}

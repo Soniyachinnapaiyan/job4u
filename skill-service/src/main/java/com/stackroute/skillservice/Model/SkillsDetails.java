@@ -11,6 +11,10 @@ import lombok.NoArgsConstructor;
 //@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class SkillsDetails {
     private String email;
-    private String skill;
-    private String otherSkills;
+    private String skill1;
+    private String skill2;
+    private String skill3;
+    private String level1;
+    private String level2;
+    private String level3;
 }

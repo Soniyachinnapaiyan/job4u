@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration.class})
 @EnableEurekaClient
-class    SkillServiceApplication {
+public class    SkillServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SkillServiceApplication.class, args);

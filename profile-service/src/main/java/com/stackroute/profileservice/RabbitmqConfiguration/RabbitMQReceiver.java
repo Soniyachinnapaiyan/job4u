@@ -4,7 +4,7 @@ package com.stackroute.profileservice.RabbitmqConfiguration;
 
 import com.stackroute.profileservice.Model.ProfileDetails;
 import com.stackroute.profileservice.Repository.ProfileRepo;
-import com.stackroute.profileservice.Service.ProfileCommandService;
+import com.stackroute.profileservice.Service.ProfileCommandServiceImpl;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;
 import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistrar;
@@ -22,7 +22,7 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
     @Autowired
     ProfileRepo profileRepo;
     @Autowired
-    ProfileCommandService profileCommandService;
+    ProfileCommandServiceImpl profileCommandService;
     private static final Logger logger = LoggerFactory.getLogger(RabbitMQReceiver.class);
 
 
@@ -31,7 +31,7 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
         ProfileDetails n = new ProfileDetails();
         n.setEmail(email);
         System.out.println("email is received" + email);
-        profileRepo.save(n);
+       profileRepo.save(n);
         //logger.info("Profile Details Received is.. " + personalDetail);
         //   System.out.println( this.profileCommandService.saveUser(n));
     }
@@ -58,6 +58,8 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
             n.setLocation(profileDetails.getLocation());
             n.setContactnumber(profileDetails.getContactnumber());
             profileRepo.save(n);
+            profileRepo.createLocationRelationshipWithPersonalDetails(n.getEmail(),n.getLocation());
+            profileRepo.createGenderRelationshipWithPersonalDetails(n.getEmail(),n.getGender());
         }
             /* n.setHighest_qualification(profileDetails.getHighest_qualification());
              n.setSpecialization(profileDetails.getSpecialization());
@@ -97,7 +99,8 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
             n.setExperience(profileDetails.getExperience());
             n.setCurrentsalary(profileDetails.getCurrentsalary());
             n.setJobprofile(profileDetails.getJobprofile());
-            profileRepo.save(n);
+           profileRepo.save(n);
+           profileRepo.createExperienceRelationshipWithPersonalDetails(n.getEmail(),n.getExperience());
         }
     }
 
@@ -141,7 +144,9 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
             ProfileDetails n = n1.get();
             n.setSkill(profileDetails.getSkill());
             n.setOtherSkills(profileDetails.getOtherSkills());
+            n.setSkilllevel(profileDetails.getSkilllevel());
             profileRepo.save(n);
+            profileRepo.createSkillRelationshipWithPersonalDetails(n.getEmail(), n.getSkill(),n.getSkilllevel());
         }
     }
 
