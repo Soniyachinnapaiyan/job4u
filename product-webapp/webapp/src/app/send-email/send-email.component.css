@@ -1,0 +1,39 @@
+
+.p1{min-height: 95vh; margin-left: 15%;margin-top: 3%;}
+.contain-content{min-height: 90vh;}
+.part-prime{height:550px;}
+mat-form-field{display: flex;justify-content: space-between;}
+.example-margin p{font-size: 11px;}
+h2,p{color: aliceblue;}
+.full-width{
+    width: 75%;
+}
+a{color:coral;font-weight:bold;}
+mat-card{border-radius: 35px;background-color: rgb(0, 0, 0,0.6);}
+@media screen and (max-width: 1440px){
+    .part-prime{
+        margin-right: 100px;
+    }
+    
+}
+@media screen and (max-width: 425px){
+    .part-prime{
+        margin-right: 0px;
+    }
+    
+}
+#b1{
+    margin-left: 30%;
+    margin-top: -1%;
+ 
+}
+#b2{
+    margin-top: -7.5%;
+    margin-left: -18%;
+}
+#eimg{
+    width: 30%;
+    margin-left: 9%;
+    position: absolute;
+    margin-top: 20%;
+}

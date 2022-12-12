@@ -27,3 +27,11 @@
       width: calc(100% - 40px);
    }
 }
+
+.table{
+   align-items: center;
+   margin-top: 10px;
+}
+.p1{
+   margin-top: 20px;
+}

@@ -12,10 +12,11 @@ public class SkillsController {
     @Autowired
     SkillsPublisher rabbitMQSender;
     @PostMapping(value = "/sender")
-    public String producer(@RequestBody SkillsDetails skillsDetails) {
+    public void producer(@RequestBody SkillsDetails skillsDetails) {
         //Add validation
         rabbitMQSender.sendMessageToRabbitMq(skillsDetails);
-        return "Message sent to the RabbitMQ Queue Successfully";
+//
+        System.out.println("Message sent to the RabbitMQ Queue Successfully");
     }
 }
 

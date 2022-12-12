@@ -42,7 +42,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { ProfilesearchComponent } from './profilesearch/profilesearch.component';
 import { MainHomepageComponent } from './main-homepage/main-homepage.component';
-
+import { SendEmailComponent } from './send-email/send-email.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -62,6 +62,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ExperienceDetailsComponent,
     SkillDetailsComponent,
     HomepageComponent,
+    SendEmailComponent,
     HomeNavbarComponent,
     MyProfileComponent
   ],

@@ -116,7 +116,7 @@ export class SkillDetailsComponent implements OnInit {
      
     } 
     else{
-      // this.router.navigate(["/skill-details"]);
+      this.router.navigate(["/my-profile"]);
     this.skilldetailservice.addApi(this.user).subscribe(
       (data) => {
         // alert("Education Details Added SuccessFully!!");
@@ -129,7 +129,7 @@ export class SkillDetailsComponent implements OnInit {
          
         } 
       
-        window.localStorage.removeItem('STEP_1');
+        
       },
       
       error => (console.log(error)),
