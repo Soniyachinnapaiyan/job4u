@@ -26,6 +26,9 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
+    path: 'homepage', component: HomepageComponent
+  },
+  {
     path: 'personal-details', component: PersonalDetailsComponent
   },
   {
@@ -38,14 +41,14 @@ const routes: Routes = [
     path: 'skill-details', component: SkillDetailsComponent
   },
   {
+    path: 'my-profile', component: MyProfileComponent
+  },
+  {
     path: 'moreinfo', component:MoreinfoComponent
   },
   {
     path:'profilesearch', component: ProfilesearchComponent
-  },
-{
-    path: 'my-profile', component: MyProfileComponent
-  },
+  } 
 ];
 
 @NgModule({

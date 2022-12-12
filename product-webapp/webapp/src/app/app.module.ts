@@ -27,6 +27,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -60,11 +62,12 @@ import { BrowserModule } from '@angular/platform-browser';
     ExperienceDetailsComponent,
     SkillDetailsComponent,
     HomepageComponent,
-  
     HomeNavbarComponent,
-        MyProfileComponent
+    MyProfileComponent
   ],
   imports: [
+    MatGridListModule,
+    MatTabsModule,
     MatListModule,
     MatDividerModule,
     MatMenuModule,

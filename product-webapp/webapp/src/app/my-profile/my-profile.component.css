@@ -7,19 +7,22 @@ h2{margin-right:35px; color: aliceblue;}
 mat-divider{background-color:#001122;;}
 .a{height:250px;margin-top: 10px;}
 .b{height:250px; margin-top: 10px;}
-.c{height:250px; margin-top: 20px;}
+.c{height:250px; margin-top: 10px;}
 .d{height:250px;margin-top: 10px;}
 
 @media screen and (max-width: 425px){
     mat-card{
         margin-top: 2.5px;
     }
-    mat-radio-group{
-        margin-top: -10px;
-    }   
+    
     .a{height:300px;}
     .b{height:300px;}
     .c{height:300px;}
     .d{height:300px;}
     h2{margin:12px 0 0 0;}
+}
+@media screen and (max-width: 768px){
+    mat-card{
+        margin-top: 0px;
+    }
 }
