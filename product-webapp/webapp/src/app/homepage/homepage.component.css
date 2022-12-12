@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .p1{min-height: 95vh;}
 .contain-content{min-height: 90vh;}
 .part-prime{height:550px;}
@@ -12,16 +11,3 @@
     color: white;
     font-weight: 600;
 }
-=======
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
-
-.p1{min-height:100%;}
-.contain-content{min-height: 70vh;}
-.part-prime{height:500px;}
-mat-card{ height:500px; border-radius:15px;background-color: rgb(0, 0, 0,0.5);}
-.a{min-height:20vh;}
-h1{font-family: 'Unbounded', cursive;font-size: 45px; line-height: normal;padding: 50px 0 0 50px;color: aliceblue;}
-p{padding: 25px 5px 5px 50px;font-family: 'Unbounded', cursive;font-size: 15px; line-height: normal;}
-span{color: aqua;}
-.b{min-height: 20vh;}
->>>>>>> 2eac1aa3f680936c749cf5a821376ca5fc037031

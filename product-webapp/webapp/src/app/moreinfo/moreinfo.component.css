@@ -1,8 +1,8 @@
 .example-card {
     max-width: 400px;
-    margin-bottom: 10%;
-    margin-top: 5%;
-    left: 37.5%;
+    margin-bottom: 3%;
+    margin-top: -16%;
+    left: 60%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: lightblue;
     border-radius: 7px 7px 0 0;
@@ -21,4 +21,9 @@
     .example-card {
         left: 0%;
     }
+}
+.quotes h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: 1000;
 }

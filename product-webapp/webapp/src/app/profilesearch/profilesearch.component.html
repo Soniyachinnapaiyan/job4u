@@ -1,4 +1,33 @@
 <app-topnavbar></app-topnavbar>
+<div class="p1" fxLayout="row" fxLayoutAlign="center center">
+  <div class="contain-content" fxFlex="60%" fxFlex.xs="75%%" fxLayoutAlign="center center">
+      <div class="part-prime" fxFlex="75%" fxFlex.xs="75%">
+
+<table class="example-full-width" cellspacing="0"><tr>
+  <td><mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Ex. FrontEnd devloper">
+  </mat-form-field></td>
+  <td><mat-form-field class="full-width" appearance="fill">
+      <mat-label>Preferred Location</mat-label>
+      <mat-select>
+          <mat-option *ngFor="let pref_loc of pref_loc" [value]="pref_loc.value">
+              {{pref_loc.viewValue}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field></td>
+  <td><mat-form-field class="full-width" appearance="fill">
+      <mat-label>Experience</mat-label>
+      <mat-select >
+          <mat-option *ngFor="let pref_exp of pref_exp" [value]="pref_exp.value">
+              {{pref_exp.viewValue}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field></td>
+</tr></table>
+      </div>
+  </div>
+</div>
 
     <div class="flexbox">
         <mat-card class="example-card">
@@ -81,48 +110,20 @@
               <a routerLink="/moreinfo">More Info</a>
             </mat-card-actions>
           </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
           
     </div>
-
-  
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
 
 <app-footer></app-footer>
