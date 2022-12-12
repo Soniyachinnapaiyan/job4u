@@ -1,0 +1,13 @@
+.p1{min-height: 95vh;}
+.contain-content{min-height: 90vh;}
+.part-prime{height:550px;}
+
+.quotes{
+    margin-top: 150px;
+}
+
+.quotes h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: 600;
+}

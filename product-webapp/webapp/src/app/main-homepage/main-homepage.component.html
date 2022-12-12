@@ -1,0 +1,40 @@
+<app-topnavbar></app-topnavbar>
+
+<div class="p1" fxLayout="row" fxLayoutAlign="center center">
+<div class="contain-content" fxFlex="60%" fxFlex.xs="75%%" fxLayoutAlign="center center">
+    <div class="part-prime" fxFlex="75%" fxFlex.xs="75%">
+
+<table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Ex. FrontEnd devloper">
+    </mat-form-field></td>
+    <td><mat-form-field class="full-width" appearance="fill">
+        <mat-label>Preferred Location</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let pref_loc of pref_loc" [value]="pref_loc.value">
+                {{pref_loc.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field></td>
+    <td><mat-form-field class="full-width" appearance="fill">
+        <mat-label>Experience</mat-label>
+        <mat-select >
+            <mat-option *ngFor="let pref_exp of pref_exp" [value]="pref_exp.value">
+                {{pref_exp.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field></td>
+  </tr></table>
+  <div class="quotes">
+    <h2>"All our dreams can come true—if we have the courage to pursue them." —Walt Disney</h2>
+    <h2>"Choose a job you love, and you will never have to work a day in your life." —Confucius</h2>
+    <h2>"It is never too late to be what you might have been." —George Eliot</h2>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<app-footer></app-footer>
