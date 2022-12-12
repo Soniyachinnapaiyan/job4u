@@ -8,6 +8,7 @@ import { MainHomepageComponent } from './main-homepage/main-homepage.component';
 import { MoreinfoComponent } from './moreinfo/moreinfo.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 import { ProfilesearchComponent } from './profilesearch/profilesearch.component';
 import { SignupComponent } from './signup/signup.component';
 import { SkillDetailsComponent } from './skill-details/skill-details.component';
@@ -26,6 +27,9 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
+    path: 'homepage', component: HomepageComponent
+  },
+  {
     path: 'personal-details', component: PersonalDetailsComponent
   },
   {
@@ -38,13 +42,19 @@ const routes: Routes = [
     path: 'skill-details', component: SkillDetailsComponent
   },
   {
+    path: 'my-profile', component: MyProfileComponent
+  },
+  {
     path: 'moreinfo', component:MoreinfoComponent
   },
   {
     path:'profilesearch', component: ProfilesearchComponent
   },
-{
+  {
     path: 'my-profile', component: MyProfileComponent
+  },
+  {
+    path: 'send-email',component: SendEmailComponent
   },
 ];
 

@@ -1,13 +1,16 @@
-.p1{min-height: 95vh;}
-.contain-content{min-height: 90vh;}
-.part-prime{height:550px;}
-
-.quotes{
-    margin-top: 150px;
-}
-
-.quotes h2{
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    font-weight: 600;
-}
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
+.p1{min-height:90vh;}
+.contain-content{min-height: 85vh;}
+mat-card{height:500px;background-color: rgb(0, 0, 0,0.5);}
+h1{font-family: 'Unbounded', cursive;font-size: 45px; line-height: normal;color: aliceblue;}
+p{font-family: 'Unbounded', cursive;font-size: 15px; line-height: normal;color: aliceblue;}
+span{color: aqua;}
+.search-main{height: 60px;width: 750px;background-color:aliceblue;border-radius: 50px; overflow: hidden;}
+.b{margin-top: -250px;}
+mat-icon{margin-left:15px;height:30px;}
+button{border-radius:50px ; margin-top: -25px;height: 105px;}
+mat-form-field{border-radius: 50px;}
+.full-width{width:70%;}
+table{margin: 23px 0 0 0;}
+.voice-in{margin-left:15px;width: 635px;}
+.mat-tab-label{color: aliceblue;}

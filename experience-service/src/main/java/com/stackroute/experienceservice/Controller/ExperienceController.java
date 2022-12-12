@@ -11,8 +11,9 @@ public class ExperienceController {
     @Autowired
     ExperiencePublisher rabbitMQSender;
     @PostMapping(value = "/sender")
-    public String producer(@RequestBody ExperienceDetails experienceDetails) {
+    public void producer(@RequestBody ExperienceDetails experienceDetails) {
         rabbitMQSender.sendMessageToRabbitMq(experienceDetails);
-        return "Message sent to the RabbitMQ Queue Successfully";
+        System.out.println("Message sent to the RabbitMQ Queue Successfully");
+//        return "Message sent to the RabbitMQ Queue Successfully";
     }
 }

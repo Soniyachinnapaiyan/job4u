@@ -24,7 +24,6 @@ export class MainHomepageComponent {
   ];
   pref_exp: Location[] = [
     {value: 'Fresher', viewValue: 'Fresher'},
-    {value: '0 - 1', viewValue: '0 - 1'},
     {value: '1 - 2', viewValue: '1 - 2'},
     {value: '2 - 3', viewValue: '2 - 3'},
     {value: '3 - 4', viewValue: '3 -4'},

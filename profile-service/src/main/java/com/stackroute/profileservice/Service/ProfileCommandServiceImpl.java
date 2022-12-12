@@ -14,9 +14,10 @@ public class ProfileCommandServiceImpl implements ProfileCommandService {
     private ProfileRepo profileRepo;
     @Override
     public void deleteUserNode(String email) {
-        ProfileDetails data = profileRepo.findUserByEmail(email);
-        profileRepo.delete(data);
+//        ProfileDetails data = profileRepo.findUserByEmail(email);
+        profileRepo.deletenodewithrelation(email);
     }
+
 
    /* public String saveUser(ProfileDetails profileDetails) throws ProfileAlreadyExistException {
         List<ProfileDetails> users=profileRepo.findUserByEmail(profileDetails.getEmail());

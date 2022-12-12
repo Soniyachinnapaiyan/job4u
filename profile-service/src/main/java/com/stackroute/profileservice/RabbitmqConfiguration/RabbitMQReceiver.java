@@ -98,7 +98,6 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
             n.setNoticeperiod(profileDetails.getNoticeperiod());
             n.setExperience(profileDetails.getExperience());
             n.setCurrentsalary(profileDetails.getCurrentsalary());
-            n.setJobprofile(profileDetails.getJobprofile());
            profileRepo.save(n);
            profileRepo.createExperienceRelationshipWithPersonalDetails(n.getEmail(),n.getExperience());
         }
@@ -142,11 +141,16 @@ public class RabbitMQReceiver implements RabbitListenerConfigurer {
          else {*/
         if (n1.isPresent()) {
             ProfileDetails n = n1.get();
-            n.setSkill(profileDetails.getSkill());
-            n.setOtherSkills(profileDetails.getOtherSkills());
-            n.setSkilllevel(profileDetails.getSkilllevel());
+            n.setSkill1(profileDetails.getSkill1());
+            n.setLevel1(profileDetails.getLevel1());
+            n.setSkill2(profileDetails.getSkill2());
+            n.setLevel2(profileDetails.getLevel2());
+            n.setSkill3(profileDetails.getSkill3());
+            n.setLevel3(profileDetails.getLevel3());
             profileRepo.save(n);
-            profileRepo.createSkillRelationshipWithPersonalDetails(n.getEmail(), n.getSkill(),n.getSkilllevel());
+            profileRepo.createSkill1RelationshipWithPersonalDetails(n.getEmail(), n.getSkill1(),n.getLevel1());
+            profileRepo.createSkill2RelationshipWithPersonalDetails(n.getEmail(), n.getSkill2(),n.getLevel2());
+            profileRepo.createSkill3RelationshipWithPersonalDetails(n.getEmail(), n.getSkill3(),n.getLevel3());
         }
     }
 

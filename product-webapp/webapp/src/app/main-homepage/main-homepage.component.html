@@ -1,40 +1,67 @@
-<app-topnavbar></app-topnavbar>
-
+<app-home-navbar></app-home-navbar>
 <div class="p1" fxLayout="row" fxLayoutAlign="center center">
-<div class="contain-content" fxFlex="60%" fxFlex.xs="75%%" fxLayoutAlign="center center">
-    <div class="part-prime" fxFlex="75%" fxFlex.xs="75%">
+    <div class="contain-content" fxFlex="100%" fxFlex.xs="100%" fxLayoutAlign="center center">
+        <div class="part-prime" fxFlex="99.5%" fxFlex.xs="100%">
+            <mat-card fxLayout="row wrap">
+                <div class="a" fxLayout="column wrap" fxFlex="100%" fxFlex.xs="100%" fxLayoutAlign="center center">
+                    <h1>Find Your Best Fit.</h1>
+                    <p>Find.<span> Connect.</span> Recruit</p>
+                </div>
+                <div class="b" fxLayout="column wrap" fxFlex="100%" fxFlex.xs="90%" fxLayoutAlign="center center">
+                    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+                        <mat-tab label="Manual">
+                            <div fxLayout="row" fxFlex.xs="100%" fxlayoutGap="15%" fxLayoutAlign="center center">
+                                <div fxLayout="row" fxFlex.xs="100%" class="search-main" fxLayoutAlign="center center">
+                                    <table cellspacing="0">
+                                        <tr>
+                                            <td><mat-form-field appearance="fill" fxFlex.xs="100%">
 
-<table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Search</mat-label>
-      <input matInput placeholder="Ex. FrontEnd devloper">
-    </mat-form-field></td>
-    <td><mat-form-field class="full-width" appearance="fill">
-        <mat-label>Preferred Location</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let pref_loc of pref_loc" [value]="pref_loc.value">
-                {{pref_loc.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field></td>
-    <td><mat-form-field class="full-width" appearance="fill">
-        <mat-label>Experience</mat-label>
-        <mat-select >
-            <mat-option *ngFor="let pref_exp of pref_exp" [value]="pref_exp.value">
-                {{pref_exp.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field></td>
-  </tr></table>
-  <div class="quotes">
-    <h2>"All our dreams can come true—if we have the courage to pursue them." —Walt Disney</h2>
-    <h2>"Choose a job you love, and you will never have to work a day in your life." —Confucius</h2>
-    <h2>"It is never too late to be what you might have been." —George Eliot</h2>
-  </div>
+                                                    <input matInput placeholder="Ex. FrontEnd devloper">
+                                                </mat-form-field></td>
+                                            <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                                    <mat-label>Preferred Location</mat-label>
+                                                    <mat-select>
+                                                        <mat-option *ngFor="let pref_loc of pref_loc"
+                                                            [value]="pref_loc.value">
+                                                            {{pref_loc.viewValue}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field></td>
+                                            <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                                    <mat-label>Experience</mat-label>
+                                                    <mat-select>
+                                                        <mat-option *ngFor="let pref_exp of pref_exp"
+                                                            [value]="pref_exp.value">
+                                                            {{pref_exp.viewValue}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field></td>
+                                            <td>
+                                                <button mat-raised-button>Search</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Voice">
+                            <div class="voice search-main" fxLayoutAlign="center center" fxFlex.xs="100%">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><mat-form-field class="voice-in" appearance="fill">
+                                                <input matInput placeholder="Voice search....">
+                                            </mat-form-field></td>
+                                        <td>
+                                            <button mat-raised-button><mat-icon matSuffix>mic</mat-icon></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </mat-card>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-
-
-
 <app-footer></app-footer>

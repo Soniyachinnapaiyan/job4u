@@ -5,7 +5,6 @@ export class Experiencedetails {
     noticeperiod:string;
     experience:string;
     currentsalary:string;
-    jobprofile:string;
 
     constructor(){
         

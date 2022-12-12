@@ -23,7 +23,7 @@ public class ExperienceDetails {
 
     private String experience;
     private String currentsalary;
-    private String jobprofile;
+
 
     public String getEmail() {
         return email;
@@ -67,11 +67,5 @@ public class ExperienceDetails {
         this.currentsalary = currentsalary;
     }
 
-    public String getJobprofile() {
-        return jobprofile;
-    }
 
-    public void setJobprofile(String jobprofile) {
-        this.jobprofile = jobprofile;
-    }
 }
