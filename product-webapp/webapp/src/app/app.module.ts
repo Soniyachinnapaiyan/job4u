@@ -29,6 +29,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -67,6 +68,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MyProfileComponent
   ],
   imports: [
+    MatPaginatorModule,
     MatGridListModule,
     MatTabsModule,
     MatListModule,

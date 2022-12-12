@@ -7,18 +7,37 @@
                     <h1>Find Your Best Fit.</h1>
                     <p>Find.<span> Connect.</span> Recruit</p>
                 </div>
-                <div class="b" fxLayout="column wrap" fxFlex="100%" fxFlex.xs="90%" fxLayoutAlign="center center">
+                <div class="b" fxLayout="column" fxFlex="100%" fxFlex.xs="100%" fxLayoutAlign="center center">
                     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-                        <mat-tab label="Manual">
-                            <div fxLayout="row" fxFlex.xs="100%" fxlayoutGap="15%" fxLayoutAlign="center center">
-                                <div fxLayout="row" fxFlex.xs="100%" class="search-main" fxLayoutAlign="center center">
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <p class=" label-tab">Manual</p>
+                            </ng-template>
+                            <div fxLayout="row" fxFlex="100%" fxFlex.xs="100%" fxLayoutAlign="center center">
+                                <div fxFlex="100%" fxFlex.xs="100%" class="search-main" fxLayoutAlign="center center">
                                     <table cellspacing="0">
                                         <tr>
-                                            <td><mat-form-field appearance="fill" fxFlex.xs="100%">
-
-                                                    <input matInput placeholder="Ex. FrontEnd devloper">
+                                            <td><mat-form-field appearance="fill">
+                                                    <mat-label>Preferred Skill</mat-label>
+                                                    <mat-select matNativeControl (change)="selectskill($event)">
+                                                        <mat-option *ngFor="let pref_skl of pref_skill"
+                                                            [value]="pref_skl.value"
+                                                            [selected]="selectedskill === pref_skl.value">
+                                                            {{pref_skl.viewValue}}
+                                                        </mat-option>
+                                                    </mat-select>
                                                 </mat-form-field></td>
-                                            <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                            <td><mat-form-field appearance="fill">
+                                                    <mat-label>Preferred Level</mat-label>
+                                                    <mat-select matNativeControl (change)="selectlevel($event)">
+                                                        <mat-option *ngFor="let pref_lvl of pref_level"
+                                                            [value]="pref_lvl.value"
+                                                            [selected]="selectedlevel === pref_lvl.value">
+                                                            {{pref_lvl.viewValue}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field></td>
+                                            <td><mat-form-field appearance="fill">
                                                     <mat-label>Preferred Location</mat-label>
                                                     <mat-select>
                                                         <mat-option *ngFor="let pref_loc of pref_loc"
@@ -27,7 +46,7 @@
                                                         </mat-option>
                                                     </mat-select>
                                                 </mat-form-field></td>
-                                            <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                            <td><mat-form-field appearance="fill">
                                                     <mat-label>Experience</mat-label>
                                                     <mat-select>
                                                         <mat-option *ngFor="let pref_exp of pref_exp"
@@ -44,7 +63,10 @@
                                 </div>
                             </div>
                         </mat-tab>
-                        <mat-tab label="Voice">
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <p class="label-tab">Voice</p>
+                            </ng-template>
                             <div class="voice search-main" fxLayoutAlign="center center" fxFlex.xs="100%">
                                 <table cellspacing="0">
                                     <tr>
@@ -60,6 +82,13 @@
                         </mat-tab>
                     </mat-tab-group>
                 </div>
+                <div class="c" fxLayout="row wrap" fxShow fxHide.xs fxFlex="100%" fxFlex.xs="90%"
+                    fxLayoutAlign="start center">
+                    <img src="/assets/img/people_search.svg" height="150px" alt="">
+                </div>
+                <!-- <div class="d" fxLayout="row wrap" fxFlex="100%" fxFlex.xs="90%" fxLayoutAlign="end center">
+                    <img src="/assets/img/team.svg" height="100px" alt="">
+                </div> -->
             </mat-card>
         </div>
     </div>

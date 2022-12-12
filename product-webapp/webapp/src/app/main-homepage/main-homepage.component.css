@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
 .p1{min-height:90vh;}
 .contain-content{min-height: 85vh;}
-mat-card{height:500px;background-color: rgb(0, 0, 0,0.5);}
+mat-card{height:500px; border-radius: 0; background-color: rgb(0, 0, 0,0.5);}
+
 h1{font-family: 'Unbounded', cursive;font-size: 45px; line-height: normal;color: aliceblue;}
 p{font-family: 'Unbounded', cursive;font-size: 15px; line-height: normal;color: aliceblue;}
 span{color: aqua;}
-.search-main{height: 60px;width: 750px;background-color:aliceblue;border-radius: 50px; overflow: hidden;}
-.b{margin-top: -250px;}
+.search-main{height: 60px;width: 970px;background-color:aliceblue;border-radius: 50px; overflow: hidden;}
+.label-tab {font-size: 12px;color:#8348fa;}
+.b{margin-top: -250px;position: relative;}
+.c{margin:120px 0 0 100px;position: absolute;}
+.d{margin:38px 0 0 340px;position: absolute;}
 mat-icon{margin-left:15px;height:30px;}
 button{border-radius:50px ; margin-top: -25px;height: 105px;}
 mat-form-field{border-radius: 50px;}
 .full-width{width:70%;}
 table{margin: 23px 0 0 0;}
-.voice-in{margin-left:15px;width: 635px;}
-.mat-tab-label{color: aliceblue;}
+.voice-in{margin-left:15px;width: 850px;}
+
+@media screen and (max-width: 425px){
+   
+    .search-main{height: 60px;background-color:aliceblue;border-radius: 50px; overflow: hidden;}
+    .full-width{width:50%;}
+    .voice-in{margin-left:15px;width:200px;}
+}
+@media screen and (max-width: 800px){
+    .c{margin:120px 0 0 0px;}
+}

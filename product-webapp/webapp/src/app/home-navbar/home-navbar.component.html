@@ -1,7 +1,17 @@
 <nav class="main-container" fxLayout="row wrap" fxLayoutAlign="center center">
-    <div class="contain-images" fxLayout="row wrap" fxFlex="95%" fxLayoutAlign="space-between center">
+    <div class="contain-images" fxLayout="row " fxFlex="95%" fxLayoutAlign="space-between center">
         <div><img src="/assets/img/logo.png" height=60px></div>
-        <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxFlex="20%">
+        <div fxLayout="row " fxLayoutAlign="space-around center" fxFlex="25%">
+            <button fxHide fxShow.xs mat-button [matMenuTriggerFor]="beforeMenu" height="100px"><img
+                    src="/assets/img/avatar.svg" alt="" srcset="" height="60px"></button>
+            <mat-menu #beforeMenu="matMenu" height="100px" xPosition="before">
+                <button mat-menu-item routerLink="/login">
+                    <p>Sign in</p>
+                </button>
+                <button mat-menu-item routerLink="/signup">
+                    <p>Sign up</p>
+                </button>
+            </mat-menu>
             <div fxShow fxHide.xs><button mat-raised-button routerLink="/login">Sign in</button></div>
             <div fxShow fxHide.xs><button mat-raised-button routerLink="/signup">Sign up</button></div>
 
