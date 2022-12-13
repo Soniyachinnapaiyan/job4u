@@ -15,7 +15,7 @@ import { SkillDetailsComponent } from './skill-details/skill-details.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'signup', pathMatch: 'full'
+    path: '', redirectTo: 'main-homepage', pathMatch: 'full'
   },
   {
     path: 'main-homepage', component: MainHomepageComponent

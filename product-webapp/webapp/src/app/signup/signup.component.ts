@@ -27,6 +27,7 @@ export class SignupComponent {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   centered = false;
+  hide = true;
   user: UserRegistration = new UserRegistration();
   errorMessage: String = "";
   registerData:RegisterService;
@@ -133,7 +134,7 @@ export class SignupComponent {
   
   email = new FormControl('', [Validators.required, Validators.email]);
   RememberMe = false;
-   hide = true;
+   
 
     
   getErrorMessage() {

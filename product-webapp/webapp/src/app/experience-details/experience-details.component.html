@@ -10,25 +10,42 @@
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
                         <mat-card-title>
-                            <h2>Experience Information</h2>
+                            <h2>Experience Details</h2>
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
-                                <input formControlName="designation" matInput placeholder="Your Designation">
+                                <mat-label>Your Designation</mat-label>
+                                <input formControlName="designation" matInput>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="companyname" matInput placeholder="Current Company Name">
+                                <mat-label>Current Company Name</mat-label>
+                                <input formControlName="companyname" matInput>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="currentsalary" matInput placeholder="Current Salary">
+                                <mat-label>Current Salary</mat-label>
+                                <input formControlName="currentsalary" matInput>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="experience" matInput placeholder="Total years of Expereince">
+                                <mat-label>Total years of Experience</mat-label>
+                                <mat-select formControlName="experience">
+                                    <mat-option *ngFor="let pref_exp of pref_exp" [value]="pref_exp.value">
+                                        {{pref_exp.viewValue}}
+                                    </mat-option>
+                                </mat-select>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="noticeperiod" matInput placeholder="Notice Period">
+                                <mat-label>Notice Period Ex: In days</mat-label>
+                                <input formControlName="noticeperiod" matInput [errorStateMatcher]="matcher"
+                                    maxlength="10">
+                                <mat-error *ngIf="profileForm.get('noticeperiod').hasError('required')">
+                                    Notice period is <strong>required</strong>
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="!profileForm.get('noticeperiod').hasError('required') &&profileForm.get('noticeperiod').hasError('pattern')">
+                                    enter a valid notice period
+                                </mat-error>
                             </mat-form-field>
 
                         </div>

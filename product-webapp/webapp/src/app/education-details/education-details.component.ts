@@ -1,37 +1,48 @@
 import { Component ,OnInit} from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import{Educationdetails} from '../service/education-details/educationdetails';
 import{EducationdetailsService} from '../service/education-details/educationdetails.service';
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
-
+import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+import { ErrorStateMatcher } from '@angular/material/core';
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid);
+  }
+}
 @Component({
   selector: 'app-education-details',
   templateUrl: './education-details.component.html',
   styleUrls: ['./education-details.component.css']
 })
 export class EducationDetailsComponent implements OnInit{
+  profileForm: FormGroup;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   centered = false;
   user: Educationdetails = new Educationdetails();
   registerData:EducationdetailsService;
-
+  matcher = new MyErrorStateMatcher();
   constructor(private formBuilder:FormBuilder,private educationdetailservice:EducationdetailsService,private router:Router,private _snackBar: MatSnackBar){}
-  profileForm = this.formBuilder.group({
-    highest_qualification:['',Validators.required],
-    email:['',Validators.required],
-    specialization:['',Validators.required],
-    institute_name:['',Validators.required],
-    passing_year:['',Validators.required],
-    cgpa:['',Validators.required],
-  });
+  // profileForm = this.formBuilder.group({
+  //   highest_qualification:['',Validators.required],
+  //   email:['',Validators.required],
+  //   specialization:['',Validators.required],
+  //   institute_name:['',Validators.required],
+  //   passing_year:['',Validators.required],
+  //   cgpa:['',Validators.required],
+  // });
   
   ngOnInit():void {
+    this.profileForm = new FormGroup({
+      email:new FormControl('', [Validators.email]),
+      highest_qualification:new FormControl('',[Validators.required]),
+      specialization:new FormControl('', [Validators.required]),
+      institute_name:new FormControl('', [Validators.required]),
+      passing_year:new FormControl('',[Validators.pattern('/(^$|[0-9]{10})/')]),
+      cgpa:new FormControl('',[Validators.required])
+    });
     // this.email=localStorage.getItem('loginEmail')
     if(localStorage.getItem("STEP_2")){
       var values =  JSON.parse(localStorage.getItem("STEP_2"));

@@ -2,12 +2,10 @@
     <div class="contain-images" fxLayout="row" fxFlex="95%" fxLayoutAlign="space-between center">
         <div><img src="/assets/img/logo.png" height=60px></div>
         <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxFlex="50%">
-            <div><button mat-raised-button routerLink="/homepage">Home</button></div>
-            <div fxShow fxHide.xs><button mat-raised-button>About Us</button></div>
-            <div fxShow fxHide.xs><button mat-raised-button>Contact Us</button></div>
+
         </div>
         <div fxLayoutAlign="center center">
-
+            <div><button mat-raised-button routerLink="/homepage">Home</button></div>
             <button mat-button [matMenuTriggerFor]="beforeMenu" height="100px"><img src="/assets/img/avatar.svg" alt=""
                     srcset="" height="60px"></button>
             <mat-menu #beforeMenu="matMenu" height="100px" xPosition="before">

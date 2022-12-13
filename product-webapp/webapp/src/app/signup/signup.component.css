@@ -5,6 +5,7 @@
 .part-prime{height: 375px;}
 mat-form-field{display: flex; justify-content: space-between; }
 .example-margin p{font-size: 11px;}
+.logo{border: none;background: none;}
 h2,p{color: aliceblue;}
 a{color:coral;font-weight:bold;}
 mat-card{border-radius: 35px;background-color: rgb(0, 0, 0,0.6);}

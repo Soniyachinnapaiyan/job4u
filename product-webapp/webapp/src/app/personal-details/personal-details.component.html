@@ -10,27 +10,30 @@
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
                         <mat-card-title>
-                            <h2>Profile Information</h2>
+                            <h2>Profile Details</h2>
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
-                                <input formControlName="username" matInput placeholder="Full name">
+                                <mat-label>Full Name</mat-label>
+                                <input formControlName="username" matInput>
                             </mat-form-field>
                             <!-- <mat-form-field class="full-width">
                                 <input formControlName="email" matInput placeholder="Email">
                             </mat-form-field> -->
                             <mat-form-field class="full-width">
+                                <mat-label>Phone Number</mat-label>
                                 <input matInput placeholder="Phone Numer" formControlName="contactnumber"
-                                   [errorStateMatcher]="matcher"  maxlength="10">
-                                     <mat-error *ngIf="profileForm.get('contactnumber').hasError('required')">
-                                       Phone number is <strong>required</strong>
-                                     </mat-error>
-                                      <mat-error *ngIf="!profileForm.get('contactnumber').hasError('required') &&profileForm.get('contactnumber').hasError('pattern')">
-                                      Please enter valid mumber
-                                     </mat-error>
-                          </mat-form-field>
+                                    [errorStateMatcher]="matcher" maxlength="10">
+                                <mat-error *ngIf="profileForm.get('contactnumber').hasError('required')">
+                                    Phone number is <strong>required</strong>
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="!profileForm.get('contactnumber').hasError('required') &&profileForm.get('contactnumber').hasError('pattern')">
+                                    Please enter valid number
+                                </mat-error>
+                            </mat-form-field>
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Select DOB</mat-label>
                                 <input formControlName="dob" matInput [matDatepicker]="picker">
@@ -61,7 +64,7 @@
                         </div>
                     </mat-card-content>
                     <mat-card-actions fxLayoutAlign="center">
-                        <button (click)="saveForm()" mat-raised-button color="primary" > Save &
+                        <button (click)="saveForm()" mat-raised-button color="primary"> Save &
                             Continue</button>
                     </mat-card-actions>
                 </mat-card>

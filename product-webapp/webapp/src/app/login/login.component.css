@@ -3,7 +3,8 @@
 .illustrate-view{min-height: 50vh; }
 .logo-view{min-height: 50vh; }
 .part-prime{height: 375px;}
-mat-form-field{display: flex;justify-content: space-between;}
+mat-form-field{display: flex;justify-content: space-between; width: 75%;}
+.logo{border: none;background: none;}
 .example-margin p{font-size: 11px;}
 h2,p{color: aliceblue;}
 a{color:coral;font-weight:bold;}

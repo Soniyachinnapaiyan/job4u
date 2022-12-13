@@ -10,26 +10,38 @@
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
                         <mat-card-title>
-                            <h2>Educational Information</h2>
+                            <h2>Educational Details</h2>
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
                             <mat-form-field class="full-width">
-                                <input formControlName="highest_qualification" matInput
-                                    placeholder="Highest Qualification">
+                                <mat-label>Highest Qualification</mat-label>
+                                <input formControlName="highest_qualification" matInput>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="specialization" matInput placeholder="Specialization">
+                                <mat-label>Specialization</mat-label>
+                                <input formControlName="specialization" matInput>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="institute_name" matInput placeholder="Institute Name">
+                                <mat-label>Institute Name</mat-label>
+                                <input formControlName="institute_name" matInput>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="passing_year" matInput placeholder="Year Of Passing">
+                                <mat-label>Year of Passing</mat-label>
+                                <input formControlName="passing_year" matInput [errorStateMatcher]="matcher"
+                                    maxlength="4">
+                                <mat-error *ngIf="profileForm.get('passing_year').hasError('required')">
+                                    Passing year is <strong>required</strong>
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="!profileForm.get('passing_year').hasError('required') &&profileForm.get('passing_year').hasError('pattern')">
+                                    enter a valid passing year
+                                </mat-error>
                             </mat-form-field>
                             <mat-form-field class="full-width">
-                                <input formControlName="cgpa" matInput placeholder="Overall CGPA">
+                                <mat-label>Overall CGPA</mat-label>
+                                <input formControlName="cgpa" matInput>
                             </mat-form-field>
                         </div>
                     </mat-card-content>

@@ -15,6 +15,7 @@ import {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  hide = true;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -119,7 +120,7 @@ export class LoginComponent implements OnInit {
     }
     email = new FormControl('', [Validators.required, Validators.email]);
     RememberMe = false;
-    hide = true;
+    
 
     
   getErrorMessage() {

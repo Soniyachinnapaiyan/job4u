@@ -1,7 +1,8 @@
 <div class="main-container" fxLayout="row wrap" fxLayoutAlign="center center">
     <div class="contain-images" fxLayout="column wrap" fxFlex="40%" fxShow fxHide.xs>
         <div class="logo-view" fxFlex="50%">
-            <img src=" /assets/img/logo.png" alt="" srcset="" height="150px" fxFlex.sm="90%">
+            <button class="logo" routerLink="/main-homepage"><img src=" /assets/img/logo.png" alt="" srcset=""
+                    height="150px" fxFlex.sm="90%"></button>
 
         </div>
         <div class="illustrate-view" fxFlex="50%">
@@ -16,16 +17,16 @@
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
                         <mat-card-title>
-                            <h2>Create new Account !.</h2>
+                            <h2>Create new Account</h2>
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                         <div fxLayout="column" fxLayoutAlign="center center">
-                            <mat-form-field class="full-width">
+                            <mat-form-field appearance="fill" class="full-width">
 
-                                <input matInput placeholder="Email" formControlName="email"
-                                    [errorStateMatcher]="matcher">
-
+                                <mat-label>Email</mat-label>
+                                <input formControlName="email" matInput [errorStateMatcher]="matcher">
+                                <mat-icon matSuffix>email</mat-icon>
                                 <mat-error
                                     *ngIf="profileForm.get('email').hasError && !profileForm.get('email').hasError('required')">
                                     Please enter a valid email address
@@ -41,38 +42,46 @@
                                     <mat-icon>lock</mat-icon>
                                 </div>
                             </mat-form-field> -->
-                            <mat-form-field class="full-width">
-                                <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="password" type="password" matInput
-                                        [errorStateMatcher]="passwordErrorStateMatcher" placeholder="Password">
-                                    <mat-error *ngIf="profileForm.get('password').hasError('password')">
-                                        Password is <strong>required</strong>
-                                    </mat-error>
-                                    <!-- <mat-error *ngIf="profileForm.get('password').hasError('required')">
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Enter password</mat-label>
+                                <input formControlName="password" type="password" matInput
+                                    [type]="hide ? 'password' : 'text'" [errorStateMatcher]="passwordErrorStateMatcher"
+                                    placeholder="Password">
+                                <mat-error *ngIf="profileForm.get('password').hasError('password')">
+                                    Password is <strong>required</strong>
+                                </mat-error>
+                                <!-- <mat-error *ngIf="profileForm.get('password').hasError('required')">
                                   
                         
                                 </mat-error>
                                 <mat-error *ngIf="profileForm.get('password').hasError('pattern')">
                                   Password must be at least 8 charc  -->
-                                    <!-- acters long and must contain at least one lowercase letter, one uppercase letter, and one digit -->
-                                    <!-- </mat-error> -->
-                                    <mat-icon>lock</mat-icon>
-                                </div>
+                                <!-- acters long and must contain at least one lowercase letter, one uppercase letter, and one digit -->
+                                <!-- </mat-error> -->
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+
                             </mat-form-field>
-                            <mat-form-field class="full-width">
-                                <div fxLayoutAlign="space-evenly center">
-                                    <input formControlName="cpassword" type="password" matInput
-                                        [errorStateMatcher]="passwordErrorStateMatcher" placeholder="Confirm Password">
-                                    <mat-error *ngIf="profileForm.get('password').hasError('required')">
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Confirm password</mat-label>
+                                <input formControlName="cpassword" type="password" matInput
+                                    [type]="hide ? 'password' : 'text'" [errorStateMatcher]="passwordErrorStateMatcher"
+                                    placeholder="Confirm Password">
+                                <mat-error *ngIf="profileForm.get('password').hasError('required')">
 
 
-                                    </mat-error>
-                                    <mat-error *ngIf="profileForm.get('password').hasError('pattern')">
-                                        Password must be at least 8 charc
-                                        <!-- acters long and must contain at least one lowercase letter, one uppercase letter, and one digit -->
-                                    </mat-error>
-                                    <mat-icon>lock</mat-icon>
-                                </div>
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('password').hasError('pattern')">
+                                    Password must be at least 8 charc
+                                    <!-- acters long and must contain at least one lowercase letter, one uppercase letter, and one digit -->
+                                </mat-error>
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+
                             </mat-form-field>
                             <mat-checkbox id="checkbox" class="checkbox" color="primary" formControlName="checkbox">
                                 <p> By Accepting,you agree to <br> <b>Terms of
