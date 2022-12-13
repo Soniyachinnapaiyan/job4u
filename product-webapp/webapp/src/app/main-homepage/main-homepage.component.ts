@@ -109,7 +109,7 @@ export class MainHomepageComponent implements OnInit {
     {value: 'Angular', viewValue: 'Angular'},
     {value: 'Html', viewValue: 'Html'},
     {value: 'Css', viewValue: 'Css'},
-    {value: 'Javascript', viewValue: 'Javascript'},
+    {value: 'Javascript', viewValue: 'JavaScript'},
     {value: 'Neo4j', viewValue: 'Neo4j'},
     {value: 'C', viewValue: 'C'},
     {value: 'C++', viewValue: 'C++'},
