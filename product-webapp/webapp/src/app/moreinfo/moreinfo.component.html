@@ -1,37 +1,36 @@
 <app-topnavbar></app-topnavbar>
 
-<img  src=" /assets/img/hacker_mindset.svg" alt="" srcset="" id="photo" height="300px" >
+<img src=" /assets/img/hacker_mindset.svg" alt="" srcset="" id="a" height="300px">
 
 <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Dileep</mat-card-title>
-        <mat-card-subtitle>FrontEnd Devloper</mat-card-subtitle>
-        <img mat-card-sm-image src="" >
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-        <p>Username : Dileep123</p>
-        <p>Dob : 2/2/200</p>
-        <p>Gender : Male</p>
-        <p>Contactnumber : 245210201 </p>
-        <p>Highest-Qualification : B.tech</p>    
-        <p>Experience : Fresher</p>
-        <p>Location : Banglore</p>
-        <p>Expected Ctc : 7 lacs</p>
-        <p>Skill Set : Angular, JavaSciprt </p>
-        <p>Institute name : VIT</p>
-        <p>CGPA : 9.0 </p>
-        <p>Passing-year : 2021</p>
-        <p>Notice Period : NA</p>
-        <p>Currentsalary : NA</p>
-        
-    
-    </mat-card-content>
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Dileep</mat-card-title>
+      <mat-card-subtitle>FrontEnd Devloper</mat-card-subtitle>
+      <img mat-card-sm-image src="">
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <p> Username :{{username}} </p>
+    <p>Dob : {{dob}}</p>
+    <p>Gender : {{gender}}</p>
+    <p>Contactnumber : {{contactnumber}} </p>
+    <p>Highest-Qualification : {{highest_qualification}} </p>
+    <p>Experience : {{experience}} </p>
+    <p>Location : {{location}}</p>
+    <p>Skill Set : {{skill1}}-{{level1}},{{skill2}}-{{level2}},{{skill3}}-{{level3}}</p>
+    <p>Institute name : {{institute_name}}</p>
+    <p>CGPA : {{cgpa}} </p>
+    <p>Passing-year : {{passing_year}}</p>
+    <p>Notice Period : {{noticeperiod}}</p>
+    <p>Currentsalary : {{currentsalary}}</p>
+
+
+  </mat-card-content>
 </mat-card>
 <div class="quotes">
   <h2>"All our dreams can come true if we have the courage to pursue them.</h2>
   <h2>"Choose a job you love, and you will never have to work a day in your life.</h2>
 </div>
 
-    <app-footer></app-footer>
+<app-footer></app-footer>

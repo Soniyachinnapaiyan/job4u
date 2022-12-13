@@ -39,24 +39,28 @@
                                                 </mat-form-field></td>
                                             <td><mat-form-field appearance="fill">
                                                     <mat-label>Preferred Location</mat-label>
-                                                    <mat-select>
+                                                    <mat-select formControlName="location" matNativeControl
+                                                        (change)="selectlocation($event)">
                                                         <mat-option *ngFor="let pref_loc of pref_loc"
-                                                            [value]="pref_loc.value">
+                                                            [value]="pref_loc.value"
+                                                            [selected]="selectedlocation === pref_loc.value">
                                                             {{pref_loc.viewValue}}
                                                         </mat-option>
                                                     </mat-select>
                                                 </mat-form-field></td>
                                             <td><mat-form-field appearance="fill">
                                                     <mat-label>Experience</mat-label>
-                                                    <mat-select>
+                                                    <mat-select formControlName="experience" matNativeControl
+                                                        (change)="selectexperience($event)">
                                                         <mat-option *ngFor="let pref_exp of pref_exp"
-                                                            [value]="pref_exp.value">
+                                                            [value]="pref_exp.value"
+                                                            [selected]="selectedexperience === pref_exp.value">
                                                             {{pref_exp.viewValue}}
                                                         </mat-option>
                                                     </mat-select>
                                                 </mat-form-field></td>
                                             <td>
-                                                <button mat-raised-button>Search</button>
+                                                <button mat-raised-button (click)="search()">Search</button>
                                             </td>
                                         </tr>
                                     </table>
