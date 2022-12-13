@@ -14,87 +14,63 @@
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
-                        <div fxLayout="column" fxLayoutAlign="center center">
-                            <div fxLayout="row " fxFlex="100%" fxLayoutAlign="center center">
-                                <div class="select-opt">
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Skill Name1</mat-label>
-                                        <mat-select formControlName="skill1">
-                                            <mat-option *ngFor="let pref_skill1 of pref_skill"
-                                                [value]="pref_skill1.value">
-                                                {{pref_skill1.viewValue}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                                <div>
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Skill Level1</mat-label>
-                                        <mat-select formControlName="level1">
-                                            <mat-option *ngFor="let pref_level1 of pref_level"
-                                                [value]="pref_level1.value">
-                                                {{pref_level1.viewValue}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                            </div>
+                        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Skill Name1</mat-label>
+                                <mat-select formControlName="skill1">
+                                    <mat-option *ngFor="let pref_skill1 of pref_skill" [value]="pref_skill1.value">
+                                        {{pref_skill1.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Skill Level1</mat-label>
+                                <mat-select formControlName="level1">
+                                    <mat-option *ngFor="let pref_level1 of pref_level" [value]="pref_level1.value">
+                                        {{pref_level1.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
                         </div>
-                    </mat-card-content>
-                    <mat-card-content>
-                        <div fxLayout="column" fxLayoutAlign="center center">
-                            <div fxLayout="row " fxFlex="100%" fxLayoutAlign="center center">
-                                <div class="select-opt">
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Skill Name2</mat-label>
-                                        <mat-select formControlName="skill2">
-                                            <mat-option *ngFor="let pref_skill2 of pref_skill"
-                                                [value]="pref_skill2.value">
-                                                {{pref_skill2.viewValue}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                                <div>
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Skill Level2</mat-label>
-                                        <mat-select formControlName="level2">
-                                            <mat-option *ngFor="let pref_level2 of pref_level"
-                                                [value]="pref_level2.value">
-                                                {{pref_level2.viewValue}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                            </div>
+                        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Skill Name2</mat-label>
+                                <mat-select formControlName="skill2">
+                                    <mat-option *ngFor="let pref_skill2 of pref_skill" [value]="pref_skill2.value">
+                                        {{pref_skill2.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Skill Level2</mat-label>
+                                <mat-select formControlName="level2">
+                                    <mat-option *ngFor="let pref_level2 of pref_level" [value]="pref_level2.value">
+                                        {{pref_level2.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
                         </div>
-                    </mat-card-content>
-                    <mat-card-content>
-                        <div fxLayout="column" fxLayoutAlign="center center">
-                            <div fxLayout="row " fxFlex="100%" fxLayoutAlign="center center">
-                                <div class="select-opt">
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Skill Name3</mat-label>
-                                        <mat-select formControlName="skill3">
-                                            <mat-option *ngFor="let pref_skill3 of pref_skill"
-                                                [value]="pref_skill3.value">
-                                                {{pref_skill3.viewValue}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                                <div>
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Skill Level3</mat-label>
-                                        <mat-select formControlName="level3">
-                                            <mat-option *ngFor="let pref_level3 of pref_level"
-                                                [value]="pref_level3.value">
-                                                {{pref_level3.viewValue}}
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                            </div>
+                        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Skill Name3</mat-label>
+                                <mat-select formControlName="skill3">
+                                    <mat-option *ngFor="let pref_skill3 of pref_skill" [value]="pref_skill3.value">
+                                        {{pref_skill3.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Skill Level3</mat-label>
+                                <mat-select formControlName="level3">
+                                    <mat-option *ngFor="let pref_level3 of pref_level" [value]="pref_level3.value">
+                                        {{pref_level3.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
                         </div>
                     </mat-card-content>
                     <mat-card-actions fxLayoutAlign="center">

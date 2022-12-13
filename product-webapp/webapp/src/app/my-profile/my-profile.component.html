@@ -4,14 +4,15 @@
         <div class="part-prime" fxFlex="100%" fxFlex.xs="100%">
             <mat-card>
                 <div fxLayout="row wrap">
-                    <div class="a" fxLayout="row wrap" fxFlex="50%" fxFlex.xs="100%" fxLayoutAlign="center center">
+                    <div class="a" fxLayout="row wrap" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%"
+                        fxLayoutAlign="center center">
                         <h2>Personal</h2>
                         <mat-divider></mat-divider>
-                        <mat-list fxFlex="60%" fxFlex.xs="100%">
+                        <mat-list fxFlex="70%" fxFlex.xs="100%">
                             <div>
                                 <mat-list-item>
 
-                                    <p>Name : {{username}}</p>
+                                    <p><strong>Name :</strong>{{username}}</p>
 
                                     <!-- <input placeholder="username" formControlName="username"> -->
                                     <!-- <p>[(ngModel)]="profiledetails.name">{{profiledetails.name}}</p> -->
@@ -19,23 +20,23 @@
                             </div>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Email :{{email}}</p>
+                                <p><strong>Email :</strong>{{email}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Phone Number :{{contactnumber}}</p>
+                                <p><strong>Phone Number :</strong>{{contactnumber}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Date Of Birth :{{dob}}</p>
+                                <p><strong>Date Of Birth :</strong>{{dob}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Gender :{{gender}}</p>
+                                <p><strong>Gender :</strong>{{gender}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Preferred Location :{{location}}</p>
+                                <p><strong>Preferred Location :</strong>{{location}}</p>
                             </mat-list-item>
                         </mat-list>
 
@@ -46,23 +47,23 @@
                         <mat-divider></mat-divider>
                         <mat-list fxFlex="70%" fxFlex.xs="100%">
                             <mat-list-item>
-                                <p>Highest Qualification :{{highest_qualification}}</p>
+                                <p><strong>Highest Qualification :</strong>{{highest_qualification}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Specialization :{{specialization}}</p>
+                                <p><strong>Specialization :</strong>{{specialization}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Institue Name :{{institute_name}}</p>
+                                <p><strong>Institue Name :</strong>{{institute_name}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Year of Passing :{{passing_year}}</p>
+                                <p><strong>Year of Passing :</strong>{{passing_year}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Overall CGPA :{{cgpa}}</p>
+                                <p><strong>Overall CGPA :</strong>{{cgpa}}</p>
                             </mat-list-item>
                         </mat-list>
                     </div>
@@ -75,23 +76,23 @@
                         <mat-divider></mat-divider>
                         <mat-list fxFlex="70%" fxFlex.xs="100%">
                             <mat-list-item>
-                                <p>Your Designation :{{designation}}</p>
+                                <p><strong>Your Designation :</strong>{{designation}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Current Comany name :{{companyname}}</p>
+                                <p><strong>Current Comany name :</strong>{{companyname}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>ICurrent Salary :{{currentsalary}}</p>
+                                <p><strong>Current Salary :</strong>{{currentsalary}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Total Years Of Experience :{{experience}}</p>
+                                <p><strong>Total Years Of Experience :</strong>{{experience}}</p>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p>Notice Period :{{noticeperiod}}</p>
+                                <p><strong>Notice Period :</strong>{{noticeperiod}}</p>
                             </mat-list-item>
                         </mat-list>
                     </div>
@@ -102,22 +103,22 @@
                         <mat-list fxFlex="70%" fxFlex.xs="100%">
                             <mat-list-item>
                                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-                                    <p>Skill 1 :{{skill1}}</p>
-                                    <p>Level :{{level1}}</p>
+                                    <p><strong>Skill 1 :</strong>{{skill1}}</p>
+                                    <p><strong>Level :</strong>{{level1}}</p>
                                 </div>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
                                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-                                    <p>Skill 2 :{{skill2}}</p>
-                                    <p>Level :{{level2}}</p>
+                                    <p><strong>Skill 2 :</strong>{{skill2}}</p>
+                                    <p><strong>Level :</strong>{{level2}}</p>
                                 </div>
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
                                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-                                    <p>Skill 3 :{{skill3}}</p>
-                                    <p>Level :{{level3}}</p>
+                                    <p><strong>Skill 3 :</strong>{{skill3}}</p>
+                                    <p><strong>Level :</strong>{{level3}}</p>
                                 </div>
                             </mat-list-item>
                         </mat-list>
