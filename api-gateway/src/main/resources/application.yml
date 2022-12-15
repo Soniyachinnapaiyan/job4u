@@ -7,10 +7,55 @@ eureka:
 
 
 
+
 server:
   port: 8086
+management:
+  security:
+    enabled: false
 
 spring:
   application:
     name: api-gateway
+
+
+cloud:
+  gateway:
+    routes:
+      - id: academics-service
+        uri: http://localhost:8082
+        predicates:
+          - Path=/academics-service/**
+#      - id: email-service
+#          uri: lb://email-service
+#          predicates:
+#            - Path=/email-service/**
+
+
+
+#      - id: experience-service
+#        uri: lb://experience-service
+#        predicates:
+#          - Path=/rabbitmq/**
+#
+#      - id: personal-detail-service
+#        uri: lb://personal-detail-service
+#        predicates:
+#          - Path=/rabbitmq/**
+#
+#      - id: profile-service
+#        uri: lb://profile-service
+#        predicates:
+#          -Path=/profile/**
+#
+#      - id: skill-service
+#        uri: lb://skill-service
+#        predicates:
+#          -Path=/rabbitmq/**
+#
+#      - id: user-authentication-service
+#        uri: lb://user-authentication-service
+#        predicates:
+#          -Path=/api/v1/**
+
 

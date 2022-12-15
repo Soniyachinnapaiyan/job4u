@@ -40,9 +40,9 @@ public class EmailServiceImpl implements EmailService {
             mimeMessageHelper.setSubject(details.getSubject());
             mimeMessageHelper.setText(details.getMsgBody());
             mimeMessageHelper.setText(details.getMsgBody() + "\r\n" + "Company Name : " + details.getCompany_name() + "\r\n" +
-                    "Job Role : " + details.getJob_role() + "\r\n" +
+
                     "Recruiter Name : " + details.getRecruiter_name() + "\r\n" +
-                    "Recruiter Id. : " + details.getRecruiter_id()+details.getMessage() + "\r\n\r\n" + details.getTextt());
+                    "Message : " + details.getMessage() + "\r\n\r\n" + details.getTextt());
           //  FileSystemResource file = new FileSystemResource(new File(details.getAttachment()));
 
             //mimeMessageHelper.addAttachment(file.getFilename(), file);

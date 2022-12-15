@@ -17,13 +17,10 @@ public class EmailDetails {
     private String recipient;
     @NotEmpty(message = "Company name shouldn't be null")
     private String company_name;
-    @NotEmpty(message = "Job role shouldn't be null")
-    private String job_role;
+
     @NotEmpty(message = "Recruiter name shouldn't be null")
     private String recruiter_name;
-    @NotEmpty(message ="Recruiter id shouldn't be null" )
-    @Email
-    private String recruiter_id;
+
     @NotEmpty(message = "Message shouldn't be null")
     private String message;
     //private String attachment;
