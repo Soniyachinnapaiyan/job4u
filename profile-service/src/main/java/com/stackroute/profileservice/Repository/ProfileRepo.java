@@ -35,9 +35,21 @@ public interface ProfileRepo extends Neo4jRepository<ProfileDetails,String> {
     @Query("MATCH (a:ProfileDetails) where (a.location)=$location return a")
     List<ProfileDetails> getRecommendedUserByCity(String location);
 
-    @Query("MATCH (a:ProfileDetails) where (a.location)=$location and (a.skill)=$skill and (a.experience)=$experience return a")
-    List<ProfileDetails>getRecommendedUserByChoice(String location, String skill, String experience);
+ @Query("MATCH (a:ProfileDetails) where (a.skill1)=$skill1 and (a.level1)=$level1 return a")
+ List<ProfileDetails> getRecommendedUserBySkill(String skill1, String level1);
+    @Query("MATCH (a:ProfileDetails) where (a.experience)=$experience return a")
+    List<ProfileDetails> getRecommendedUserByExperience(String experience);
+    @Query("MATCH (a:ProfileDetails) where (a.skill1)=$skill1 and (a.level1)=$level1 and (a.experience)=$experience return a")
+    List<ProfileDetails> getRecommendedUserBySLE(String skill1, String level1,String experience);
 
-    @Query("MATCH (a:ProfileDetails) where (a.location)=$location and (a.skill)=$skill and (a.experience)=$experience and (a.skilllevel)=$skilllevel return a")
-    List<ProfileDetails>getRecommendedUserByPreference(String location, String skill, String experience,String skilllevel);
+    @Query("MATCH (a:ProfileDetails) where (a.skill1)=$skill1 and (a.level1)=$level1 and (a.location)=$location return a")
+    List<ProfileDetails> getRecommendedUserBySLL(String skill1, String level1,String location);
+    @Query("MATCH (a:ProfileDetails) where (a.location)=$location and (a.skill1)=$skill1 and (a.experience)=$experience return a")
+    List<ProfileDetails>getRecommendedUserByChoice(String location, String skill1, String experience);
+
+ @Query("MATCH (a:ProfileDetails) where (a.location)=$location and (a.skill1)=$skill1 return a")
+ List<ProfileDetails>getRecommendedUserByLocationandSkill(String location, String skill1);
+
+    @Query("MATCH (a:ProfileDetails) where (a.location)=$location and (a.skill1)=$skill1 and (a.experience)=$experience and (a.level1)=$level1 return a")
+    List<ProfileDetails>getRecommendedUserByPreference(String location, String skill1, String experience,String level1);
 }

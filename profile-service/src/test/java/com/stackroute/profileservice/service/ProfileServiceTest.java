@@ -19,41 +19,41 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class ProfileServiceTest {
 
-    @Mock
-    ProfileRepo profileRepo;
-
-    @InjectMocks
-    ProfileQueryServiceImpl profileQueryServiceimpl;
-
-
-
-
-    @Test
-    void generateRecommendationByCity() throws ProfileNotFoundException{
-        Optional<ProfileDetails> optionalData=Optional.empty();
-        when(profileRepo.findById("soniya@gmail.com")).thenReturn(optionalData);
-        assertThrows(ProfileNotFoundException.class,()->{
-            profileQueryServiceimpl.getByEmail("soniya@gmail.com");
-        });
-
-    }
-
-    @Test
-    void getRecommendedUserByChoice()  throws ProfileNotFoundException {
-        Optional<ProfileDetails> optionalData=Optional.empty();
-        when(profileRepo.findById("soniya@gmail.com")).thenReturn(optionalData);
-        assertThrows(ProfileNotFoundException.class,()->{
-            profileQueryServiceimpl.getByEmail("soniya@gmail.com");
-        });
-
-    }
-
-    @Test
-    void getRecommendedUserByPreference() throws ProfileNotFoundException {
-        Optional<ProfileDetails> optionalData=Optional.empty();
-        when(profileRepo.findById("soniya@gmail.com")).thenReturn(optionalData);
-        assertThrows(ProfileNotFoundException.class,()->{
-            profileQueryServiceimpl.getByEmail("soniya@gmail.com");
-        });
-    }
+//    @Mock
+//    ProfileRepo profileRepo;
+//
+//    @InjectMocks
+//    ProfileQueryServiceImpl profileQueryServiceimpl;
+//
+//
+//
+//
+//    @Test
+//    void generateRecommendationByCity() throws ProfileNotFoundException{
+//        Optional<ProfileDetails> optionalData=Optional.empty();
+//        when(profileRepo.findById("soniya@gmail.com")).thenReturn(optionalData);
+//        assertThrows(ProfileNotFoundException.class,()->{
+//            profileQueryServiceimpl.getByEmail("soniya@gmail.com");
+//        });
+//
+//    }
+//
+//    @Test
+//    void getRecommendedUserByChoice()  throws ProfileNotFoundException {
+//        Optional<ProfileDetails> optionalData=Optional.empty();
+//        when(profileRepo.findById("soniya@gmail.com")).thenReturn(optionalData);
+//        assertThrows(ProfileNotFoundException.class,()->{
+//            profileQueryServiceimpl.getByEmail("soniya@gmail.com");
+//        });
+//
+//    }
+//
+//    @Test
+//    void getRecommendedUserByPreference() throws ProfileNotFoundException {
+//        Optional<ProfileDetails> optionalData=Optional.empty();
+//        when(profileRepo.findById("soniya@gmail.com")).thenReturn(optionalData);
+//        assertThrows(ProfileNotFoundException.class,()->{
+//            profileQueryServiceimpl.getByEmail("soniya@gmail.com");
+//        });
+//    }
 }

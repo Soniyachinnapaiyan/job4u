@@ -40,8 +40,24 @@ public class ProfileQueryServiceImpl implements ProfileQueryService {
         }
     }
     @Override
-    public List<ProfileDetails> getRecommendedUserByChoice(String location, String skill, String experience) throws ProfileNotFoundException {
-        List<ProfileDetails> profile= profileRepo.getRecommendedUserByChoice(location,skill,experience);
+    public List<ProfileDetails> getRecommendedUserBySkill(String skill1,String level1) throws ProfileNotFoundException {
+        List<ProfileDetails> profile= profileRepo.getRecommendedUserBySkill(skill1,level1);
+        if (profile.isEmpty()) {
+            throw new ProfileNotFoundException("profile not found");
+        } else {
+            return profile;
+        }
+    }
+    public List<ProfileDetails> getRecommendedUserBySLE(String skill1,String level1,String experience) throws  ProfileNotFoundException{
+        List<ProfileDetails> profile= profileRepo.getRecommendedUserBySLE(skill1,level1,experience);
+        if (profile.isEmpty()) {
+            throw new ProfileNotFoundException("profile not found");
+        } else {
+            return profile;
+        }
+    }
+    public List<ProfileDetails> getRecommendedUserBySLL(String location, String skill1,String level1) throws  ProfileNotFoundException{
+        List<ProfileDetails> profile= profileRepo.getRecommendedUserBySLL(skill1,level1,location);
         if (profile.isEmpty()) {
             throw new ProfileNotFoundException("profile not found");
         } else {
@@ -49,8 +65,28 @@ public class ProfileQueryServiceImpl implements ProfileQueryService {
         }
     }
     @Override
-    public List<ProfileDetails> getRecommendedUserByPreference(String location, String skill, String experience,String skilllevel) throws ProfileNotFoundException {
-        List<ProfileDetails> profile= profileRepo.getRecommendedUserByPreference(location,skill,experience,skilllevel);
+    public List<ProfileDetails> getRecommendedUserByExperience(String experience) throws ProfileNotFoundException {
+        List<ProfileDetails> profile= profileRepo.getRecommendedUserByExperience(experience);
+        if (profile.isEmpty()) {
+            throw new ProfileNotFoundException("profile not found");
+        } else {
+            return profile;
+        }
+    }
+
+    @Override
+    public List<ProfileDetails> getRecommendedUserByChoice(String location, String skill1, String experience) throws ProfileNotFoundException {
+        List<ProfileDetails> profile= profileRepo.getRecommendedUserByChoice(location,skill1,experience);
+        if (profile.isEmpty()) {
+            throw new ProfileNotFoundException("profile not found");
+        } else {
+            return profile;
+        }
+    }
+    @Override
+    public List<ProfileDetails> getRecommendedUserByPreference(String location, String skill1, String experience,String level1) throws ProfileNotFoundException {
+        System.out.println(experience);
+        List<ProfileDetails> profile= profileRepo.getRecommendedUserByPreference(location,skill1,experience,level1);
         if (profile.isEmpty()) {
             throw new ProfileNotFoundException("profile not found");
         } else {
