@@ -1,129 +1,111 @@
-<app-topnavbar></app-topnavbar>
+<app-home-navbar></app-home-navbar>
+<form [formGroup]="profileForm">
 <div class="p1" fxLayout="row" fxLayoutAlign="center center">
-  <div class="contain-content" fxFlex="60%" fxFlex.xs="75%%" fxLayoutAlign="center center">
-      <div class="part-prime" fxFlex="75%" fxFlex.xs="75%">
 
-<table class="example-full-width" cellspacing="0"><tr>
-  <td><mat-form-field class="example-full-width">
-    <mat-label>Search</mat-label>
-    <input matInput placeholder="Ex. FrontEnd devloper">
-  </mat-form-field></td>
-  <td><mat-form-field class="full-width" appearance="fill">
-      <mat-label>Preferred Location</mat-label>
-      <mat-select>
-          <mat-option *ngFor="let pref_loc of pref_loc" [value]="pref_loc.value">
-              {{pref_loc.viewValue}}
-          </mat-option>
-      </mat-select>
-  </mat-form-field></td>
-  <td><mat-form-field class="full-width" appearance="fill">
-      <mat-label>Experience</mat-label>
-      <mat-select >
-          <mat-option *ngFor="let pref_exp of pref_exp" [value]="pref_exp.value">
-              {{pref_exp.viewValue}}
-          </mat-option>
-      </mat-select>
-  </mat-form-field></td>
-</tr></table>
-      </div>
-  </div>
+
+          <div class="b" fxLayout="column wrap" fxFlex="100%" fxFlex.xs="90%" fxLayoutAlign="center center">
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+                <mat-tab label="Manual">
+                    <div fxLayout="row" fxFlex.xs="100%" fxlayoutGap="15%" fxLayoutAlign="center center">
+                        <div fxLayout="row" fxFlex.xs="100%" class="search-main" fxLayoutAlign="center center">
+                            <table cellspacing="0">
+                                <tr>
+                                    <!-- <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+
+                                            <input matInput placeholder="Ex. FrontEnd devloper">
+                                        </mat-form-field></td> -->
+                                        <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                            <mat-label>Preferred Skill</mat-label>
+                                            <mat-select formControlName="skill1" matNativeControl (change)="selectskill($event)">
+                                                <mat-option *ngFor="let pref_skl of pref_skill"
+                                                    [value]="pref_skl.value" [selected]="selectedskill === pref_skl.value">
+                                                    {{pref_skl.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field></td>
+                                        <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                            <mat-label>Preferred Level</mat-label>
+                                            <mat-select  formControlName="level1" matNativeControl (change)="selectlevel($event)">
+                                                <mat-option *ngFor="let pref_lvl of pref_level"
+                                                    [value]="pref_lvl.value" [selected]="selectedlevel === pref_lvl.value">
+                                                    {{pref_lvl.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field></td>
+                                    <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                            <mat-label>Preferred Location</mat-label>
+                                            <mat-select  formControlName="location" matNativeControl (change)="selectlocation($event)">
+                                                <mat-option *ngFor="let pref_loc of pref_loc"
+                                                    [value]="pref_loc.value" [selected]="selectedlocation === pref_loc.value">
+                                                    {{pref_loc.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field></td>
+                                    <td><mat-form-field appearance="fill" fxFlex.xs="100%">
+                                            <mat-label>Experience</mat-label>
+                                            <mat-select formControlName="experience" matNativeControl (change)="selectexperience($event)">
+                                                <mat-option *ngFor="let pref_exp of pref_exp"
+                                                    [value]="pref_exp.value"[selected]="selectedexperience === pref_exp.value">
+                                                    {{pref_exp.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field></td>
+                                    <td>
+                                        <button mat-raised-button (click)="search()">Search</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Voice">
+                    <div class="voice search-main" fxLayoutAlign="center center" fxFlex.xs="100%">
+                        <table cellspacing="0">
+                            <tr>
+                                <td><mat-form-field class="voice-in" appearance="fill">
+                                        <input matInput placeholder="Voice search....">
+                                    </mat-form-field></td>
+                                <td>
+                                    <button mat-raised-button><mat-icon matSuffix>mic</mat-icon></button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+
 </div>
+</form>
 
-    <div class="flexbox">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-              
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-              
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>Dileep</mat-card-title>
-              <mat-card-subtitle>FrontEnd devloper</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p> 📍 Pref Location: Banglore</p>
-              <p> 💵 Expected Ctc :  7-8 lacs</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="/moreinfo">More Info</a>
-            </mat-card-actions>
-          </mat-card>
-          
-    </div>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
+<mat-paginator style="padding-bottom: 20px;background-color: inherit;padding-right:30px;"
+    [length]="this.userlist.length" pageSize=6 (page)="getPaginatorData($event)" [pageSizeOptions]="[6,12, 24, 42]"
+    showFirstLastButtons="false">
+</mat-paginator>
+<div class="flexbox">
+    <mat-card class="example-card" *ngFor="let user of  (userlist |slice: lowValue : highValue)">
+        <mat-card-header>
+            <mat-card-title style="color:aqua">{{user.username}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10%">
+                <div fxLayout="row"><mat-icon>work</mat-icon>{{user.experience}}</div>
+                <div fxLayout="row"><mat-icon>history_edu</mat-icon>{{highest_qualification}}</div>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10%">
+                <div fxLayout="row"><mat-icon>pin_drop</mat-icon>{{user.location}}</div>
+                <div fxLayout="row"><mat-icon>call</mat-icon>123456789</div>
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="end">
+            <a (click)="gotomoreinfo(user)" routerLink="/moreinfo">More Info</a>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
 
 <app-footer></app-footer>

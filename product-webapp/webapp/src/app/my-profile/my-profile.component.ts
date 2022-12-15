@@ -86,7 +86,7 @@ export class MyProfileComponent implements OnInit {
             }
             if(localStorage.getItem("STEP_4")!=null){
               var values =  JSON.parse(localStorage.getItem("STEP_4"));
-                this.skill1=values.skill
+                this.skill1=values.skill1
                 this.level1=values.level1
                 this.skill2=values.skill2
                 this.level2=values.level2
@@ -101,33 +101,38 @@ export class MyProfileComponent implements OnInit {
       durationInSeconds = 2;
       deleteprofile(){
         this.profiledetailservice.deleteproductbyId(localStorage.getItem("loginEmail")).subscribe((data) => {
-          this.profiledata = data;
-          console.log(this.profiledata);
-          this.email = this.profiledata.email;
-          this.username = this.profiledata.username;
-          this.contactnumber = this.profiledata.contactnumber;
-          this.dob = this.profiledata.dob;
-          this.gender = this.profiledata.gender;
-          this.location = this.profiledata.location;
-          this.highest_qualification = this.profiledata.highest_qualification;
-          this.specialization = this.profiledata.specialization;
-          this.institute_name = this.profiledata.institute_name;
-          this.passing_year = this.profiledata.passing_year;
-          this.cgpa = this.profiledata.cgpa;
-          this.designation = this.profiledata.designation;
-          this.companyname = this.profiledata.companyname;
-          this.noticeperiod = this.profiledata.noticeperiod;
-          this.experience = this.profiledata.experience;
-          this.currentsalary = this.profiledata.currentsalary;
-          this.skill1 = this.profiledata.skill1;
-          this.skill2 = this.profiledata.skill2;
-          this.skill3 = this.profiledata.skill3;
-          this.level1 = this.profiledata.level1;
-          this.level2 = this.profiledata.level2;
-          this.level3 = this.profiledata.level3;
-        });
-      this.profiledetailservice.deleteproductbyId(this.profiledata)
-    .subscribe((data) =>{
+          window.localStorage.removeItem('loginEmail')
+    window.localStorage.removeItem('STEP_1');
+  window.localStorage.removeItem('STEP_2');
+  window.localStorage.removeItem('STEP_3');
+  window.localStorage.removeItem('STEP_4');
+          // this.profiledata = data;
+          // console.log(this.profiledata);
+          // this.email = this.profiledata.email;
+          // this.username = this.profiledata.username;
+          // this.contactnumber = this.profiledata.contactnumber;
+          // this.dob = this.profiledata.dob;
+          // this.gender = this.profiledata.gender;
+          // this.location = this.profiledata.location;
+          // this.highest_qualification = this.profiledata.highest_qualification;
+          // this.specialization = this.profiledata.specialization;
+          // this.institute_name = this.profiledata.institute_name;
+          // this.passing_year = this.profiledata.passing_year;
+          // this.cgpa = this.profiledata.cgpa;
+          // this.designation = this.profiledata.designation;
+          // this.companyname = this.profiledata.companyname;
+          // this.noticeperiod = this.profiledata.noticeperiod;
+          // this.experience = this.profiledata.experience;
+          // this.currentsalary = this.profiledata.currentsalary;
+          // this.skill1 = this.profiledata.skill1;
+          // this.skill2 = this.profiledata.skill2;
+          // this.skill3 = this.profiledata.skill3;
+          // this.level1 = this.profiledata.level1;
+          // this.level2 = this.profiledata.level2;
+          // this.level3 = this.profiledata.level3;
+        // });
+    //   this.profiledetailservice.deleteproductbyId(this.profiledata)
+    // .subscribe((data) =>{
       // alert("Education Details Added SuccessFully!!");
       {
         this._snackBar.open('User Deleted SuccessFully!!', 'close', {
@@ -137,11 +142,7 @@ export class MyProfileComponent implements OnInit {
         });
        
       } 
-
-    window.localStorage.removeItem('STEP_1');
-  window.localStorage.removeItem('STEP_2');
-  window.localStorage.removeItem('STEP_3');
-  window.localStorage.removeItem('STEP_4');
+      
       
     },
     error => (console.log(error)),

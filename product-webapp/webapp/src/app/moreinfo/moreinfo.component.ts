@@ -49,7 +49,7 @@ export class MoreinfoComponent implements OnInit {
           this.currentsalary=values.currentsalary
           this.skill1=values.skill1
           this.skill2=values.skill2
-          this.skill3=values.level3
+          this.skill3=values.skill3
           this.level1=values.level1
           this.level2=values.level2
           this.level3=values.level3

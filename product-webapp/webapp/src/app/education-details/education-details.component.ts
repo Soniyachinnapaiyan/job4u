@@ -40,7 +40,7 @@ export class EducationDetailsComponent implements OnInit{
       highest_qualification:new FormControl('',[Validators.required]),
       specialization:new FormControl('', [Validators.required]),
       institute_name:new FormControl('', [Validators.required]),
-      passing_year:new FormControl('',[Validators.pattern('/(^$|[0-9]{10})/')]),
+      passing_year:new FormControl('',[Validators.pattern("^[0-9]*$")]),
       cgpa:new FormControl('',[Validators.required])
     });
     // this.email=localStorage.getItem('loginEmail')

@@ -34,10 +34,10 @@ export class ExperienceDetailsComponent implements OnInit{
   registerData:ExperiencedetailsService;
   pref_exp: Location[] = [
     {value: 'Fresher', viewValue: 'Fresher'},
-    {value: '1 - 2', viewValue: '1 - 2'},
-    {value: '2 - 3', viewValue: '2 - 3'},
-    {value: '3 - 4', viewValue: '3 -4'},
-    {value: '4 - 5', viewValue: '4 - 5'},
+    {value: '1-2', viewValue: '1 - 2'},
+    {value: '2-3', viewValue: '2 - 3'},
+    {value: '3-4', viewValue: '3 - 4'},
+    {value: '4-5', viewValue: '4 - 5'},
     {value: '5+', viewValue: '5+'},
   ]
   matcher = new MyErrorStateMatcher();
@@ -58,7 +58,7 @@ export class ExperienceDetailsComponent implements OnInit{
       designation:new FormControl('',[Validators.required]),
       companyname:new FormControl('', [Validators.required]),
       currentsalary:new FormControl('', [Validators.required]),
-      noticeperiod:new FormControl('',[Validators.pattern('/(^$|[0-9]{10})/')]),
+      noticeperiod:new FormControl('',[Validators.pattern("^[0-9]*$")]),
       experience:new FormControl('',[Validators.required])
     });
     // this.email=localStorage.getItem('loginEmail')

@@ -32,6 +32,12 @@ deleteproductbyId(email:any){
  getProductRecommendationsBySkill(skill1:String,level1:String){
   return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendBySkill/${skill1}/${level1}`)
  }
+ getProductRecommendationsBySLE(skill1:String,level1:String,experience:String){
+  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendBySLE/${skill1}/${level1}/${experience}`)
+ }
+ getProductRecommendationsBySLL(skill1:String,level1:String,location:String){
+  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendBySLL/${skill1}/${level1}/${location}`)
+ }
  getProductRecommendationsByExperience(experience:String){
   return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile/recommendByExperience/" +  experience)
  }

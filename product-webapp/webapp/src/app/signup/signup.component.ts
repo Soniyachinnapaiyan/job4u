@@ -40,7 +40,7 @@ export class SignupComponent {
   );
 
   matcher = new MyErrorStateMatcher();
-   passwordControl = new FormControl('', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/)]);
+   password = new FormControl('', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/)]);
 
   passwordErrorStateMatcher: ErrorStateMatcher = {
     isErrorState: (control: FormControl) => {

@@ -55,7 +55,7 @@ export class SkillDetailsComponent implements OnInit {
   pref_level: levelList[] = [
     {value: 'Basic', viewValue: 'Basic'},
     {value: 'Intermediate', viewValue: 'Intermediate'},
-    {value: 'Advanced', viewValue: 'Advanced'},
+    {value: 'Advance', viewValue: 'Advance'},
   ];
 
   

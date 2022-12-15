@@ -41,10 +41,10 @@ export class MainHomepageComponent implements OnInit {
   public abc:Array<ProfileDetails>=[];
   constructor(private formBuilder:FormBuilder, private profiledetailservice:ProfileDetailsService,private _snackBar: MatSnackBar,private router:Router){}
     profileForm = this.formBuilder.group({
-      location:['',],
-      skill1:['',],
-      level1:['',],
-     experience:['',]   
+      location:['',Validators.required],
+      skill1:['',Validators.required],
+      level1:['',Validators.required],
+     experience:['',Validators.required]   
     });
   
   
@@ -80,13 +80,39 @@ export class MainHomepageComponent implements OnInit {
       this.profiledetailservice.getProductRecommendationsByChoice(this.selectedlocation,this.selectedskill,this.selectedexperience,this.selectedlevel)
      }
    }
-  
+   peopleByCountry: any[] = [
+    {
+      'country': 'UK',
+      'people': [
+        {
+          "name": "Douglas  Pace"
+        },
+        {
+          "name": "Mcleod  Mueller"
+        },
+      ]
+    },
+    {
+      'country': 'US',
+      'people': [
+        {
+          "name": "Day  Meyers"
+        },
+        {
+          "name": "Aguirre  Ellis"
+        },
+        {
+          "name": "Cook  Tyson"
+        }
+      ]
+    }
+  ];
   pref_exp: Experience[] = [
     {value: 'Fresher', viewValue: 'Fresher'},
-    {value: '1-2', viewValue: '1 - 2'},
-    {value: '2-3', viewValue: '2 - 3'},
-    {value: '3-4', viewValue: '3 - 4'},
-    {value: '4-5', viewValue: '4 - 5'},
+    {value: '1 - 2', viewValue: '1 - 2'},
+    {value: '2 - 3', viewValue: '2 - 3'},
+    {value: '3 - 4', viewValue: '3 -4'},
+    {value: '4 - 5', viewValue: '4 - 5'},
     {value: '5+', viewValue: '5+'},
   ]
   selectedexperience = this.pref_loc[0].value;
@@ -109,7 +135,7 @@ export class MainHomepageComponent implements OnInit {
     {value: 'Angular', viewValue: 'Angular'},
     {value: 'Html', viewValue: 'Html'},
     {value: 'Css', viewValue: 'Css'},
-    {value: 'Javascript', viewValue: 'JavaScript'},
+    {value: 'Javascript', viewValue: 'Javascript'},
     {value: 'Neo4j', viewValue: 'Neo4j'},
     {value: 'C', viewValue: 'C'},
     {value: 'C++', viewValue: 'C++'},
@@ -175,8 +201,41 @@ export class MainHomepageComponent implements OnInit {
         // }
         localStorage.setItem("SEARCH_KEY",JSON.stringify(this.profileForm.value));
         this.router.navigate(["/profilesearch"]);
-      
+  //   localStorage.setItem("STEP_5",JSON.stringify(this.profileForm.value));
+  //   console.log(this.profileForm.value);
+  //   const {skill1,location,level1,experience}=this.profileForm.value
+  //   this.recommendedobj.skill1=skill1
+  //   this.recommendedobj.location=location
+  //   this.recommendedobj.level1=level1
+  //   this.recommendedobj.experience=experience
 
+  //   // this.recommendedobj.location=this.profileForm.value.location
+  //   // this.recommendedobj.skill1 =this.profileForm.value.skill1
+  //   // this.recommendedobj.level1=this.profileForm.value.level1
+  //   // this.recommendedobj.experience=this.profileForm.value.experience
+  //   this.profiledetailservice.getProductRecommendationsByChoice(this.recommendedobj.location,this.recommendedobj.skill1,this.recommendedobj.experience,this.recommendedobj.level1).subscribe(
+  //     (data) => {
+  //       console.log(data);
+
+  //       // alert("Education Details Added SuccessFully!!");
+  //       {
+  //         this._snackBar.open('profile details!!', 'close', {
+  //           horizontalPosition: this.horizontalPosition,
+  //           verticalPosition: this.verticalPosition,
+  //           duration: this.durationInSeconds * 1000,
+  //         });
+         
+  //       } 
+      
+       
+  //     },
+  //     error => (console.log(error)),
+    
+  //  );
+    
+// this.searchTerm = (event.target as HTMLInputElement).value;
+//      console.log(this.searchTerm);
+//   }
 }
 
 }

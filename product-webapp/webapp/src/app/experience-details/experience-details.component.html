@@ -38,7 +38,7 @@
                             <mat-form-field class="full-width">
                                 <mat-label>Notice Period Ex: In days</mat-label>
                                 <input formControlName="noticeperiod" matInput [errorStateMatcher]="matcher"
-                                    maxlength="10">
+                                    maxlength="2">
                                 <mat-error *ngIf="profileForm.get('noticeperiod').hasError('required')">
                                     Notice period is <strong>required</strong>
                                 </mat-error>

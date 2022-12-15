@@ -2,53 +2,56 @@
 <div class="p1" fxLayout="row" fxLayoutAlign="center center">
     <div class="contain-content" fxFlex="60%" fxFlex.xs="100%" fxLayoutAlign="center center">
     <div class="part-prime" fxFlex="75%" fxFlex.xs="100%">
-        <form class="form-container" >
+        <form class="form-container" [formGroup]="profileForm">
             <mat-card>
                 <mat-card-header fxLayoutAlign="center">
                     <mat-card-title>
-                        <h2>Reach Out To The Candidate!</h2>
+                        <h2>Reach Out To The Candidate</h2>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <div fxLayout="column" fxLayoutAlign="center center">
-                        <mat-form-field class="full-width">
-                            <div fxLayoutAlign="space-evenly center">
-                                <input  matInput placeholder="Your Name">
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Your Name</mat-label>
+                                <input    matInput formControlName="recruiter_name" >
+                                <mat-icon matSuffix>person</mat-icon>
                                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                                 
-                            </div>
+                            
                         </mat-form-field>
-                        <mat-form-field class="full-width">
-                            <div fxLayoutAlign="space-evenly center">
-                                <input  matInput placeholder="Email id">
-                                <mat-icon>email</mat-icon>
-                            </div>
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Email Id </mat-label>
+                                <input  matInput formControlName="recipient">
+                                <mat-icon matSuffix>email</mat-icon>
+                           
                         </mat-form-field>
-                        <mat-form-field class="full-width">
-                            <div fxLayoutAlign="space-evenly center">
-                                <input  matInput placeholder="Company">
+                        <mat-form-field class="full-width" appearance="fill">
+                            <mat-label>Company</mat-label>
+                                <input  matInput  formControlName="company_name">
+                                <mat-icon matSuffix>work</mat-icon>
                                 
-                            </div>
                         </mat-form-field>
-                        <mat-form-field class="full-width">
+                        <!-- <mat-form-field class="full-width">
                             <div fxLayoutAlign="space-evenly center">
                                 <input  matInput placeholder="Designation">
                            </div>
-                        </mat-form-field>
-                        <mat-form-field class="full-width">
-                            <div fxLayoutAlign="space-evenly center">
-                                <input  matInput placeholder="Message">
-                           </div>
+                        </mat-form-field> -->
+                        <mat-form-field class="full-width"appearance="fill">
+                            <mat-label>Message</mat-label>
+                                <textarea  matInput placeholder="Message" formControlName="message"></textarea>
+                                
+
                         </mat-form-field>
                         <!-- <mat-checkbox class="example-margin">
                             <p> By Accepting,you agree to <br> <b>Terms of
                                     Service</b> and <b>Privacy Policy</b></p>
                         </mat-checkbox> -->
                        
-                            <button type="submit" id="b1"  mat-raised-button color="primary">Send</button>
+                            <button type="submit" id="b1"  mat-raised-button color="primary" (click)="sendmail()">Send</button>
                  
-                    
-                                <button type="submit"  id="b2" mat-raised-button color="warn">Discard</button>
+                    <!-- <button type="submit" id="b1" mat-raised-button color="primary"
+                                (click)="openDialog()">Send</button> -->
+                                <button type="submit"  id="b2" mat-raised-button color="warn" routerLink="/moreinfo">Discard</button>
                     </div>
                 </mat-card-content>
             </mat-card>

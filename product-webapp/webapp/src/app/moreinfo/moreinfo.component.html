@@ -1,36 +1,50 @@
-<app-topnavbar></app-topnavbar>
+<app-home-navbar></app-home-navbar>
+<div class="p1" fxLayout="row" fxLayoutAlign="center center">
+  <div class="contain-content" fxFlex="40%" fxFlex.xs="100%" fxLayoutAlign="center center">
+    <div class="part-prime" fxFlex="75%" fxFlex.xs="100%">
 
-<img src=" /assets/img/hacker_mindset.svg" alt="" srcset="" id="a" height="300px">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><mat-icon>face</mat-icon> {{username}}</mat-card-title>
+            <!-- <mat-card-subtitle>FrontEnd Devloper</mat-card-subtitle> -->
+            <img mat-card-sm-image src="/assets/img/pic_profile.svg">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p><mat-icon>cake</mat-icon> Date of Birth - {{dob}}</p>
+          <p><mat-icon>email</mat-icon> Email - {{email}}</p>
+          <p><mat-icon>person</mat-icon> Gender - {{gender}}</p>
+          <p><mat-icon>call</mat-icon> Phone Number - {{contactnumber}} </p>
+          <p><mat-icon>pin_drop</mat-icon> Preffered Location - {{location}}</p>
 
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Dileep</mat-card-title>
-      <mat-card-subtitle>FrontEnd Devloper</mat-card-subtitle>
-      <img mat-card-sm-image src="">
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    <p> Username :{{username}} </p>
-    <p>Dob : {{dob}}</p>
-    <p>Gender : {{gender}}</p>
-    <p>Contactnumber : {{contactnumber}} </p>
-    <p>Highest-Qualification : {{highest_qualification}} </p>
-    <p>Experience : {{experience}} </p>
-    <p>Location : {{location}}</p>
-    <p>Skill Set : {{skill1}}-{{level1}},{{skill2}}-{{level2}},{{skill3}}-{{level3}}</p>
-    <p>Institute name : {{institute_name}}</p>
-    <p>CGPA : {{cgpa}} </p>
-    <p>Passing-year : {{passing_year}}</p>
-    <p>Notice Period : {{noticeperiod}}</p>
-    <p>Currentsalary : {{currentsalary}}</p>
+          <p><mat-icon>history_edu</mat-icon> Highest Qualification - {{highest_qualification}} </p>
+          <p><mat-icon>school</mat-icon> Institute name - {{institute_name}}</p>
+          <p><mat-icon>work</mat-icon> Specialization - {{specialization}}</p>
+          <p><mat-icon>workspace_premium</mat-icon> CGPA - {{cgpa}} </p>
+          <p><mat-icon>today</mat-icon> Passing-year - {{passing_year}}</p>
 
+          <p><mat-icon>badge</mat-icon> Designation - {{designation}}</p>
+          <p><mat-icon>apartment</mat-icon> Experience - {{experience}}</p>
+          <p><mat-icon>work_history</mat-icon> Notice Period - {{noticeperiod}} Days</p>
+          <p><mat-icon>paid</mat-icon> Current Salary - {{currentsalary}}</p>
 
-  </mat-card-content>
-</mat-card>
-<div class="quotes">
-  <h2>"All our dreams can come true if we have the courage to pursue them.</h2>
-  <h2>"Choose a job you love, and you will never have to work a day in your life.</h2>
+          <p><mat-icon>lan</mat-icon> Skill Set -
+            {{skill1}}-{{level1}},{{skill2}}-{{level2}},{{skill3}}-{{level3}}</p>
+          <p></p>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="space-between center">
+          <button routerLink="/profilesearch" mat-raised-button color="warn"><mat-icon>keyboard_backspace</mat-icon>
+            Back</button>
+          <button routerLink="/send-email" mat-raised-button color="primary"><mat-icon>thumb_up</mat-icon>
+            Intersted</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="c" fxLayout="row wrap" fxShow fxHide.xs fxFlex="100%" fxFlex.xs="90%" fxLayoutAlign="start center">
+      <img src="/assets/img/proud_coder.svg" height="150px" alt="">
+    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>

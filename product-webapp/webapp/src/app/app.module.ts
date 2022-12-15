@@ -31,6 +31,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -48,6 +49,7 @@ import { SendEmailComponent } from './send-email/send-email.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { EmailDialogComponent } from './email-dialog/email-dialog.component';
 
 @NgModule({
   declarations: [
@@ -66,11 +68,13 @@ import { BrowserModule } from '@angular/platform-browser';
     HomepageComponent,
     SendEmailComponent,
     HomeNavbarComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    EmailDialogComponent
   ],
   imports: [
     MatPaginatorModule,
     MatGridListModule,
+    MatDialogModule,
     MatTabsModule,
     MatListModule,
     MatDividerModule,

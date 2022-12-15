@@ -1,15 +1,17 @@
 .example-card {
-    max-width: 400px;
-    margin-bottom: 3%;
-    margin-top: -19%;
-    left: 60%;
+    
+    margin-top: -30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: lightblue;
-    border-radius: 7px 7px 0 0;
+    border-radius: 7px;
     transition: 0.3s;
     text-shadow: 2%;
     
 }
+.p1{min-height: 135vh;}
+.contain-content{min-height: 90vh;}
+.part-prime{height:700px;}
+.c{position:absolute; left: 50px;bottom:100px;}
 
 
     a{
@@ -22,20 +24,8 @@
         left: 0%;
     }
 }
-.quotes h2{
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    font-weight: 1000;
-    
-}
 
 #photo{
     margin-left: 15%;
     margin-top: 5%;
-}
-.quotes{
-    position: absolute;
-    top: 70%;
-    width: 500px;
-    left: 5%;
 }

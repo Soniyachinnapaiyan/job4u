@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SendEmailService {
-  baseUrl="http://localhost:8897";
+  baseUrl="http://localhost:8888";
   // baseUrl="https://swapsquad.stackroute.io"
 
   constructor(private httpClient: HttpClient) { }
 
 
   emailnotification(details: SendEmail): Observable<Object> {
-     return this.httpClient.post(this.baseUrl+"/sendMailWithAttachment",details);
+     return this.httpClient.post(this.baseUrl+"/email/sendMailWithAttachment",details);
   }
 
 }

@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
         console.log("validated",data);
           this.profileForm.reset();
           localStorage.setItem("loginEmail",this.loginObj.email);
-         this.router.navigate(["/personal-details"]);
+         this.router.navigate(["/homepage"]);
       },
       (
         error=>{console.log(error);
