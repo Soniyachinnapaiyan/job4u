@@ -16,7 +16,7 @@ export class LoginService {
 
   loginApi(loginData: User) {
     return this.httpClient.post<any>(
-      "http://localhost:8099/api/v1/login",loginData
+      "http://localhost:8080/user-authentication-service/login",loginData
     );
   }
 }

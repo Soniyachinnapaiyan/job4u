@@ -6,8 +6,8 @@ import com.stackroute.personaldetailservice.Service.PersonalProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
-@RequestMapping(value = "/rabbitmq")
-@CrossOrigin("*")
+@RequestMapping(value = "/personal-detail-service")
+//@CrossOrigin("*")
 public class PersonalController {
     @Autowired
     PersonalProducer rabbitMQSender;

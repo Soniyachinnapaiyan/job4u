@@ -11,7 +11,7 @@ export class ExperiencedetailsService {
 
   addApi(experienceDetailsData:Experiencedetails ) {
     return this.httpClient.post<any>(
-      "http://localhost:8084/rabbitmq/sender",experienceDetailsData
+      "http://localhost:8080/experience-service/sender",experienceDetailsData
     );
   }
 }

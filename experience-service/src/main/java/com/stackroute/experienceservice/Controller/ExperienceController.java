@@ -5,8 +5,8 @@ import com.stackroute.experienceservice.Model.ExperienceDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
-@RequestMapping(value = "/rabbitmq")
-@CrossOrigin("*")
+@RequestMapping(value = "/experience-service")
+//@CrossOrigin("*")
 public class ExperienceController {
     @Autowired
     ExperiencePublisher rabbitMQSender;

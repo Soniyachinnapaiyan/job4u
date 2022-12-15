@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/profile")
-@CrossOrigin("*")
+@RequestMapping("/profile-service")
+//@CrossOrigin("*")
 public class ProfileQueryController {
     @Autowired
     private ProfileQueryServiceImpl profileQueryService;

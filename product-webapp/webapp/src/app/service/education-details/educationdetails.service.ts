@@ -14,7 +14,7 @@ export class EducationdetailsService {
   
   addApi(educationDetailsData:Educationdetails ) {
     return this.httpClient.post<any>(
-      "http://localhost:8082/rabbitmq/sender",educationDetailsData
+      "http://localhost:8080/academics-service/sender",educationDetailsData
     );
   }
 }

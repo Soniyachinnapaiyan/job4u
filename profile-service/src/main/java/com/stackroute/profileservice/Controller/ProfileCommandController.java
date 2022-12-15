@@ -13,8 +13,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/profile")
-@CrossOrigin("*")
+@RequestMapping("/profile-service")
+//@CrossOrigin("*")
 public class ProfileCommandController {
 
     @Autowired

@@ -6,7 +6,7 @@ eureka:
     fetch-registry: true
 
 server:
-  port: 8895
+  port: 4200
 
 spring:
   application:

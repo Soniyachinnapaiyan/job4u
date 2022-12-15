@@ -87,17 +87,17 @@
 <div class="flexbox">
     <mat-card class="example-card" *ngFor="let user of  (userlist |slice: lowValue : highValue)">
         <mat-card-header>
-            <mat-card-title style="color:aqua">{{user.username}}</mat-card-title>
+            <mat-card-title style="color:black">{{user.username}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10%">
-                <div fxLayout="row"><mat-icon>work</mat-icon>{{user.experience}}</div>
-                <div fxLayout="row"><mat-icon>history_edu</mat-icon>{{highest_qualification}}</div>
+                <div fxLayout="row" fxLayoutGap="15%"><mat-icon>work</mat-icon>{{user.experience}}</div>
+                <div fxLayout="row"><mat-icon>history_edu</mat-icon>{{user.highest_qualification}}</div>
             </div>
 
             <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10%">
                 <div fxLayout="row"><mat-icon>pin_drop</mat-icon>{{user.location}}</div>
-                <div fxLayout="row"><mat-icon>call</mat-icon>123456789</div>
+                <div fxLayout="row"><mat-icon>lan</mat-icon>{{user.skill1}}</div>
             </div>
 
         </mat-card-content>

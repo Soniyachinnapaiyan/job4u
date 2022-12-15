@@ -11,7 +11,7 @@ export class SkillDetaisService {
 
     addApi(skillDetailsData:SkillDetails ) {
       return this.httpClient.post<any>(
-        "http://localhost:8088/rabbitmq/sender",skillDetailsData
+        "http://localhost:8080/skill-service/sender",skillDetailsData
       );
     }
   }

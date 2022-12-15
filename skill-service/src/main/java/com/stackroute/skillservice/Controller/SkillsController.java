@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/rabbitmq")
-@CrossOrigin("*")
+@RequestMapping(value = "/skill-service")
+//@CrossOrigin("*")
 public class SkillsController {
     @Autowired
     SkillsPublisher rabbitMQSender;

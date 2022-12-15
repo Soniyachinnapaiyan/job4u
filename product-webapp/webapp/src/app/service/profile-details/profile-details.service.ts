@@ -12,7 +12,7 @@ export class ProfileDetailsService {
   
 
 
-  private url = 'http://localhost:8090';
+  private url = 'http://localhost:8080';
 // deletePost(email){
 //     return this.httpClient.delete(this.url+'/'+email);
 //   }
@@ -21,28 +21,28 @@ export class ProfileDetailsService {
 // }
 deleteproductbyId(email:any){
   
-  return this.httpClient.delete<ProfileDetails[]>(this.url+ "/profile/delete/" + email)
+  return this.httpClient.delete<ProfileDetails[]>(this.url+ "/profile-service/delete/" + email)
  }
  getProductRecommendationsByLocation(location:String){
-  return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile/recommendByCity/" +  location)
+  return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile-service/recommendByCity/" +  location)
  }
  getAllProfile(){
-  return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile/getAllProfile")
+  return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile-service/getAllProfile")
  }
  getProductRecommendationsBySkill(skill1:String,level1:String){
-  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendBySkill/${skill1}/${level1}`)
+  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile-service/recommendBySkill/${skill1}/${level1}`)
  }
  getProductRecommendationsBySLE(skill1:String,level1:String,experience:String){
-  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendBySLE/${skill1}/${level1}/${experience}`)
+  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile-service/recommendBySLE/${skill1}/${level1}/${experience}`)
  }
  getProductRecommendationsBySLL(skill1:String,level1:String,location:String){
-  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendBySLL/${skill1}/${level1}/${location}`)
+  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile-service/recommendBySLL/${skill1}/${level1}/${location}`)
  }
  getProductRecommendationsByExperience(experience:String){
-  return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile/recommendByExperience/" +  experience)
+  return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile-service/recommendByExperience/" +  experience)
  }
  getProductRecommendationsByChoice(location:String,skill1:String, experience:String,level1:String){
-  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile/recommendByCity/${location}/${skill1}/${experience}/${level1}`)
+  return this.httpClient.get<ProfileDetails[]>(`${this.url}/profile-service/recommendByCity/${location}/${skill1}/${experience}/${level1}`)
   // return this.httpClient.get<ProfileDetails[]>(this.url+ "/profile/recommendByCity/" +'?location'+ location  + '?skill1'+skill1 +'?experience'+experience +'?level1'+level1)
  }
 

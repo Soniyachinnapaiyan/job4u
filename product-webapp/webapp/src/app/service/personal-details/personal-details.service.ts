@@ -16,7 +16,7 @@ export class PersonalDetailsService {
 
   addApi(PersonalDetailsData: PersonalDetails ) {
     return this.httpClient.post<any>(
-      "http://localhost:8083/rabbitmq/sender",PersonalDetailsData
+      "http://localhost:8080/personal-detail-service/sender",PersonalDetailsData
     );
   }
 }

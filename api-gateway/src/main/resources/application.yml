@@ -6,56 +6,78 @@ eureka:
     fetch-registry: true
 
 
-
-
 server:
-  port: 8086
-management:
-  security:
-    enabled: false
+  port: 8080
 
 spring:
   application:
     name: api-gateway
 
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+      routes:
 
-cloud:
-  gateway:
-    routes:
-      - id: academics-service
-        uri: http://localhost:8082
-        predicates:
-          - Path=/academics-service/**
-#      - id: email-service
-#          uri: lb://email-service
-#          predicates:
-#            - Path=/email-service/**
+        - id: user-authentication-service
+          uri: http://localhost:8095/
+          predicates:
+            - Path=/user-authentication-service/**
+#          filters:
+#            - RewritePath=/user-authentication-service(?<segment>/?.*), $\{segment}
 
+        - id: personal-detail-service
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/personal-detail-service/**
+#          filters:
+#            - RewritePath=/personal-detail-service(?<segment>/?.*), $\{segment}
 
+        - id: experience-service
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/experience-service/**
+#          filters:
+#            - RewritePath=/experience-service(?<segment>/?.*), $\{segment}
 
-#      - id: experience-service
-#        uri: lb://experience-service
-#        predicates:
-#          - Path=/rabbitmq/**
-#
-#      - id: personal-detail-service
-#        uri: lb://personal-detail-service
-#        predicates:
-#          - Path=/rabbitmq/**
-#
-#      - id: profile-service
-#        uri: lb://profile-service
-#        predicates:
-#          -Path=/profile/**
-#
-#      - id: skill-service
-#        uri: lb://skill-service
-#        predicates:
-#          -Path=/rabbitmq/**
-#
-#      - id: user-authentication-service
-#        uri: lb://user-authentication-service
-#        predicates:
-#          -Path=/api/v1/**
+        - id: academics-service
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/academics-service/**
+#          filters:
+#            - RewritePath=/academics-service(?<segment>/?.*), $\{segment}
 
+        - id: skill-service
+          uri: http://localhost:8088/
+          predicates:
+            - Path=/skill-service/**
+#          filters:
+#            - RewritePath=/skill-service(?<segment>/?.*), $\{segment}
 
+        - id: email-service
+          uri: http://localhost:8888/
+          predicates:
+            - Path=/email-service/**
+#          filters:
+#            - RewritePath=/email-service(?<segment>/?.*), $\{segment}
+
+        - id: profile-service
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/profile-service/**
+#          filters:
+#            - RewritePath=/profile-service(?<segment>/?.*), $\{segment}
+
+        - id: product-webapp
+          uri: http://localhost:4200/
+          predicates:
+            - Path=/**
+          filters:
+            - RewritePath=(?<segment>/?.*), $\{segment}

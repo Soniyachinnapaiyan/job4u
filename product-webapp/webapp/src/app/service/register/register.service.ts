@@ -19,7 +19,7 @@ export class RegisterService {
 
   registerApi(registerData: UserRegistration){
     return this.httpClient.post<any>(
-      "http://localhost:8099/api/v1/register",registerData
+      "http://localhost:8080/user-authentication-service/register",registerData
     );
   }
 }

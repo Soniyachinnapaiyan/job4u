@@ -18,8 +18,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
-@CrossOrigin("*")
+@RequestMapping("/user-authentication-service")
+//@CrossOrigin("*")
 public class UserController {
 
 //    @Autowired

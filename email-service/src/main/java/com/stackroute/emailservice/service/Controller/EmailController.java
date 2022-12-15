@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/email")
+//@CrossOrigin("*")
+@RequestMapping("/email-service")
 public class EmailController {
     @Autowired
     private EmailService emailService;
