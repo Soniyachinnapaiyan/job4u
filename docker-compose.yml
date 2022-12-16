@@ -1,25 +1,23 @@
-version: "3"
+version: "2"
 services:
   eureka-server:
     build: eureka-server/
     container_name: eureka-server
     restart: always
-
-#    network_mode: "host"
-
-    hostname: localhost
+    network_mode: "host"
+#    hostname: localhost
     ports:
       - 8076:8076
-#  api-gateway:
-#    build: api-gateway/
-#    container_name: api-gateway
-#    depends_on:
-#      - eureka-server
-#    restart: always
-##    network_mode: "host"
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
 #    hostname: localhost
-#    ports:
-#      - "8086:8086"
+    ports:
+      - "8080:8080"
 
 #  product-webapp:
 #    build: product-webapp/
@@ -40,23 +38,24 @@ services:
     container_name: user-authentication-service
     ports:
       - 8095:8095
-    links:
-      - eureka-server
-    environment:
-      - eureka.client.service-url.defaultZone=http://localhost:8076/eureka/
+#    links:
+#      - eureka-server
+#    environment:
+#      - eureka.client.service-url.defaultZone=http://localhost:8076/eureka/
     depends_on:
-      - job4umysqldb
+      - mysql
       - rabbitmq
-  job4umysqldb:
-    image: mysql:latest
-    container_name: "job4umysqldb"
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=job4u
-      - MYSQL_PASSWORD=root
+      - eureka-server
+  mysql:
+    container_name: "mysql-user"
+    image: mysql
+    hostname: localhost
     ports:
       - 3306:3306
-#
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=auth2
+      - MYSQL_PASSWORD=root
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
