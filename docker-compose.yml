@@ -1,13 +1,17 @@
 version: "2"
 services:
+
   eureka-server:
+    image: eureka-server
     build: eureka-server/
     container_name: eureka-server
     restart: always
     network_mode: "host"
-#    hostname: localhost
+    hostname: localhost
     ports:
-      - 8076:8076
+      - 8761:8761
+
+
   api-gateway:
     build: api-gateway/
     container_name: api-gateway
@@ -15,37 +19,24 @@ services:
       - eureka-server
     restart: always
     network_mode: "host"
-#    hostname: localhost
+    hostname: localhost
     ports:
-      - "8080:8080"
+      - 8080:8080
 
-#  product-webapp:
-#    build: product-webapp/
-#    image: product-webapp
-#    depends_on:
-#      - eureka-server
-#      - api-gateway
-#    restart: always
-#    container_name: product-webapp
-##    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - "8895:8895"
 
-  user-authentication-service:
+  authentication-service:
     image: user-authentication-service
     build: user-authentication-service/
     container_name: user-authentication-service
+    network_mode: "host"
+    hostname: localhost
     ports:
       - 8095:8095
-#    links:
-#      - eureka-server
-#    environment:
-#      - eureka.client.service-url.defaultZone=http://localhost:8076/eureka/
     depends_on:
       - mysql
       - rabbitmq
       - eureka-server
+
   mysql:
     container_name: "mysql-user"
     image: mysql
@@ -56,6 +47,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=auth2
       - MYSQL_PASSWORD=root
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -63,10 +55,21 @@ services:
     ports:
       - 15672:15672
       - 5672:5672
-    environment:
-      AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
-      RABBITMQ_DEFAULT_USER: "guest"
-      RABBITMQ_DEFAULT_PASS: "guest"
+
+
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 4200:4200
+
 #
 #  skill-service:
 #    build: skill-service/
@@ -148,17 +151,20 @@ services:
 #      - rabbitmq
 #    restart: always
 #    container_name: email-service
-##    network_mode: "host"
+##   network_mode: "host"
 #    hostname: localhost
 #    ports:
 #      - 8888:8888
 #
-#  neo4j:
-#    image: neo4j:4.2.3
-#    container_name: neo4j
-#    restart: always
-#    ports:
-#      - 7687:7687
-#    environment:
-#      NEO4J_AUTH: neo4j/admin
-#      NEO4J_dbms_default__database: job4u
+  neo4j:
+    image: neo4j:4.2.3
+    container_name: neo4j
+    restart: always
+    network_mode: "host"
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      NEO4J_AUTH: neo4j/admin
+      NEO4J_dbms_default__database: job4u
+
