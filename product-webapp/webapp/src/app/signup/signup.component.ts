@@ -116,7 +116,7 @@ export class SignupComponent {
       this.registerService.registerApi(this.user).subscribe(
         (data) => {
           // alert("Successfully Registered !!");
-          this._snackBar.open('Successfully Registered !!', 'close', {
+          this._snackBar.open('Successfully Registered !', 'close', {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
           });

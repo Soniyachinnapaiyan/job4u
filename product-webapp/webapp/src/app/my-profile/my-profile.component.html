@@ -92,7 +92,7 @@
                             </mat-list-item>
                             <mat-divider></mat-divider>
                             <mat-list-item>
-                                <p><strong>Notice Period -</strong> {{noticeperiod}}</p>
+                                <p><strong>Notice Period -</strong> {{noticeperiod}} Days</p>
                             </mat-list-item>
                         </mat-list>
                     </div>
@@ -119,6 +119,33 @@
                                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
                                     <p><strong>Skill 3 -</strong> {{skill3}}</p>
                                     <p><strong>Level -</strong> {{level3}}</p>
+                                </div>
+                            </mat-list-item>
+                        </mat-list>
+                        
+                          
+                    </div>
+                </div>
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+                    <div class="c" fxLayout="row wrap" fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%"
+                        fxLayoutAlign="center center">
+                        <h2>Resume File upload</h2>
+                        <mat-list fxFlex="70%" fxFlex.xs="100%">
+                            <mat-list-item>
+                                <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                                   <p> <input mat-raised-button type="file" (change)="onFileChanged($event)"></p>
+                                    <button mat-raised-button type="button" (click)="onUpload()" value="upload">Upload <mat-icon>upload_file </mat-icon></button>
+                                </div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                                    <div *ngIf=message><p>{{message}}</p></div>
+                                </div>
+                            </mat-list-item>
+                      
+                            <mat-list-item>
+                                <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                                    <button mat-raised-button (click)="getfile()">Preview</button>
                                 </div>
                             </mat-list-item>
                         </mat-list>

@@ -55,4 +55,14 @@ export class MoreinfoComponent implements OnInit {
           this.level3=values.level3
       }
     }
+    getfile(){
+      const link = document.createElement("a");
+      var splitted = this.email.split("@", 1); 
+      console.log(splitted)
+        link.href = "http://localhost:8091/profile-service/uploads/files/"+splitted[0]+".pdf";
+        link.target="_blank";
+        // link.download.pathname("/src/app/assets/resume");
+        link.click();
+        link.remove(); 
+    }
 }

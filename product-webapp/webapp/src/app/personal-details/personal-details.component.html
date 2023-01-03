@@ -10,7 +10,7 @@
                 <mat-card>
                     <mat-card-header fxLayoutAlign="center">
                         <mat-card-title>
-                            <h2>Profile Details</h2>
+                            <h2>Personal Details</h2>
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
@@ -36,7 +36,7 @@
                             </mat-form-field>
                             <mat-form-field class="full-width" appearance="fill">
                                 <mat-label>Select DOB</mat-label>
-                                <input formControlName="dob" matInput [matDatepicker]="picker">
+                                <input [max]="maxDate" formControlName="dob" matInput [matDatepicker]="picker">
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
                             </mat-form-field>

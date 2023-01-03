@@ -52,7 +52,7 @@ export class MainHomepageComponent implements OnInit {
   pref_loc: Location[] = [
     
     {value: 'Hyderabad', viewValue: 'Hyderabad'},
-    {value: 'banglore', viewValue: 'Banglore'},
+    {value: 'Bangalore', viewValue: 'Bangalore'},
     {value: 'Chennai', viewValue: 'Chennai'},
     {value: 'Mumbai', viewValue: 'Mumbai'},
     {value: 'Pune', viewValue: 'Pune'},
@@ -80,39 +80,13 @@ export class MainHomepageComponent implements OnInit {
       this.profiledetailservice.getProductRecommendationsByChoice(this.selectedlocation,this.selectedskill,this.selectedexperience,this.selectedlevel)
      }
    }
-   peopleByCountry: any[] = [
-    {
-      'country': 'UK',
-      'people': [
-        {
-          "name": "Douglas  Pace"
-        },
-        {
-          "name": "Mcleod  Mueller"
-        },
-      ]
-    },
-    {
-      'country': 'US',
-      'people': [
-        {
-          "name": "Day  Meyers"
-        },
-        {
-          "name": "Aguirre  Ellis"
-        },
-        {
-          "name": "Cook  Tyson"
-        }
-      ]
-    }
-  ];
+   
   pref_exp: Experience[] = [
     {value: 'Fresher', viewValue: 'Fresher'},
-    {value: '1 - 2', viewValue: '1 - 2'},
-    {value: '2 - 3', viewValue: '2 - 3'},
-    {value: '3 - 4', viewValue: '3 -4'},
-    {value: '4 - 5', viewValue: '4 - 5'},
+    {value: '1-2', viewValue: '1 - 2'},
+    {value: '2-3', viewValue: '2 - 3'},
+    {value: '3-4', viewValue: '3 - 4'},
+    {value: '4-5', viewValue: '4 - 5'},
     {value: '5+', viewValue: '5+'},
   ]
   selectedexperience = this.pref_loc[0].value;
@@ -135,7 +109,7 @@ export class MainHomepageComponent implements OnInit {
     {value: 'Angular', viewValue: 'Angular'},
     {value: 'Html', viewValue: 'Html'},
     {value: 'Css', viewValue: 'Css'},
-    {value: 'Javascript', viewValue: 'Javascript'},
+    {value: 'Javascript', viewValue: 'JavaScript'},
     {value: 'Neo4j', viewValue: 'Neo4j'},
     {value: 'C', viewValue: 'C'},
     {value: 'C++', viewValue: 'C++'},

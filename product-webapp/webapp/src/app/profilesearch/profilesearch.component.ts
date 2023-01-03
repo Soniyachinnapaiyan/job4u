@@ -5,6 +5,8 @@ import { PageEvent } from '@angular/material/paginator';
 import { Route, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { NoUserDialogComponent } from '../no-user-dialog/no-user-dialog.component';
 interface Location {
   value: string;
   viewValue: string;
@@ -51,7 +53,7 @@ export class ProfilesearchComponent implements OnInit{
   experience:any;
 
  
-  constructor(private formBuilder:FormBuilder, private profiledetailservice:ProfileDetailsService,private _snackBar: MatSnackBar,private router:Router){}
+  constructor(private formBuilder:FormBuilder, private profiledetailservice:ProfileDetailsService,private _snackBar: MatSnackBar,private router:Router,public dialog: MatDialog){}
     profileForm = this.formBuilder.group({
       location:['',Validators.required],
       skill1:['',Validators.required],
@@ -64,7 +66,7 @@ export class ProfilesearchComponent implements OnInit{
   pref_loc: Location[] = [
     
     {value: 'Hyderabad', viewValue: 'Hyderabad'},
-    {value: 'banglore', viewValue: 'Banglore'},
+    {value: 'Bangalore', viewValue: 'Bangalore'},
     {value: 'Chennai', viewValue: 'Chennai'},
     {value: 'Mumbai', viewValue: 'Mumbai'},
     {value: 'Pune', viewValue: 'Pune'},
@@ -92,10 +94,10 @@ export class ProfilesearchComponent implements OnInit{
   
   pref_exp: Experience[] = [
     {value: 'Fresher', viewValue: 'Fresher'},
-    {value: '1 - 2', viewValue: '1 - 2'},
-    {value: '2 - 3', viewValue: '2 - 3'},
-    {value: '3 - 4', viewValue: '3 -4'},
-    {value: '4 - 5', viewValue: '4 - 5'},
+    {value: '1-2', viewValue: '1 - 2'},
+    {value: '2-3', viewValue: '2 - 3'},
+    {value: '3-4', viewValue: '3 - 4'},
+    {value: '4-5', viewValue: '4 - 5'},
     {value: '5+', viewValue: '5+'},
   ]
   selectedexperience = this.pref_loc[0].value;
@@ -118,7 +120,7 @@ export class ProfilesearchComponent implements OnInit{
     {value: 'Angular', viewValue: 'Angular'},
     {value: 'Html', viewValue: 'Html'},
     {value: 'Css', viewValue: 'Css'},
-    {value: 'Javascript', viewValue: 'Javascript'},
+    {value: 'Javascript', viewValue: 'JavaScript'},
     {value: 'Neo4j', viewValue: 'Neo4j'},
     {value: 'C', viewValue: 'C'},
     {value: 'C++', viewValue: 'C++'},
@@ -201,21 +203,36 @@ public getPaginatorData(event: PageEvent): PageEvent {
           this.userlist=data;
           console.log(this.userlist);
     
-          });
+          },
+          error=>{console.log(error);
+            this.dialog.open(NoUserDialogComponent);
+  
+          }
+          );
          }
          if(this.recommendedobj.skill1=="" && this.recommendedobj.level1=="" && this.recommendedobj.location==""){
           return this.profiledetailservice.getProductRecommendationsByExperience(this.recommendedobj.experience).subscribe(data=>{
             this.userlist=data;
             console.log(this.userlist);
       
-            });
+            },
+            error=>{console.log(error);
+              this.dialog.open(NoUserDialogComponent);
+    
+            }
+            );
            }
            if(this.recommendedobj.experience=="" && this.recommendedobj.location==""){
             return this.profiledetailservice.getProductRecommendationsBySkill(this.recommendedobj.skill1,this.recommendedobj.level1).subscribe(data=>{
               this.userlist=data;
               console.log(this.userlist);
          
-              });
+              },
+              error=>{console.log(error);
+                this.dialog.open(NoUserDialogComponent);
+      
+              }
+              );
              }
              else{
     this.profiledetailservice.getProductRecommendationsByChoice(this.recommendedobj.location,this.recommendedobj.skill1,this.recommendedobj.experience,this.recommendedobj.level1).subscribe(
@@ -228,7 +245,10 @@ public getPaginatorData(event: PageEvent): PageEvent {
       
             
           },
-          error => (console.log(error)),
+          error=>{console.log(error);
+            this.dialog.open(NoUserDialogComponent);
+  
+          }
         
        );
       }

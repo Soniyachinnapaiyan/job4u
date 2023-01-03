@@ -43,11 +43,11 @@ export class PersonalDetailsComponent implements OnInit {
 
 
   matcher = new MyErrorStateMatcher();
-
+maxDate= "2004-12-17"
   constructor(private formBuilder:FormBuilder,private personalDetailservice:PersonalDetailsService,private router:Router,private _snackBar: MatSnackBar){}
   pref_loc: Location[] = [
     {value: 'Hyderabad', viewValue: 'Hyderabad'},
-    {value: 'Banglore', viewValue: 'Banglore'},
+    {value: 'Bangalore', viewValue: 'Bangalore'},
     {value: 'Chennai', viewValue: 'Chennai'},
     {value: 'Mumbai', viewValue: 'Mumbai'},
     {value: 'Pune', viewValue: 'Pune'},
@@ -113,7 +113,7 @@ durationInSeconds = 2;
      (data) => {
       //  console.log("Personal Details Added SuccessFully!!");
       {
-        this._snackBar.open('Personal Details Added SuccessFully', 'close', {
+        this._snackBar.open('Personal Details Added Successfully', 'close', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
           duration: this.durationInSeconds * 1000,

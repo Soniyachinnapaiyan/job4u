@@ -2,12 +2,15 @@ package com.stackroute.profileservice.Controller;
 
 import com.stackroute.profileservice.Exception.ProfileAlreadyExistException;
 import com.stackroute.profileservice.Model.ProfileDetails;
+import com.stackroute.profileservice.Model.UploadResponse;
 import com.stackroute.profileservice.Repository.ProfileRepo;
+import com.stackroute.profileservice.Service.FileStorageService;
 import com.stackroute.profileservice.Service.ProfileCommandServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -27,6 +30,7 @@ public class ProfileCommandController {
 //        return new ResponseEntity<>("User is delete successfully", HttpStatus.OK);
         System.out.println("User is deleted successfully");
     }
+
 
 
 

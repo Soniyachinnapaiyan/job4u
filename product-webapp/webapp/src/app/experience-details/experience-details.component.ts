@@ -108,7 +108,7 @@ export class ExperienceDetailsComponent implements OnInit{
       (data) => {
         // alert("Education Details Added SuccessFully!!");
         {
-          this._snackBar.open('Experience Details Added SuccessFully!!', 'close', {
+          this._snackBar.open('Experience Details Added Successfully!', 'close', {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
             duration: this.durationInSeconds * 1000,

@@ -32,12 +32,13 @@
           <p><mat-icon>lan</mat-icon> Skill Set -
             {{skill1}}-{{level1}},{{skill2}}-{{level2}},{{skill3}}-{{level3}}</p>
           <p></p>
+          <p>Resume <button (click)="getfile()">ViewResume</button></p>
         </mat-card-content>
         <mat-card-actions fxLayoutAlign="space-between center">
           <button routerLink="/profilesearch" mat-raised-button color="warn"><mat-icon>keyboard_backspace</mat-icon>
             Back</button>
           <button routerLink="/send-email" mat-raised-button color="primary"><mat-icon>thumb_up</mat-icon>
-            Intersted</button>
+            Interested</button>
         </mat-card-actions>
       </mat-card>
     </div>

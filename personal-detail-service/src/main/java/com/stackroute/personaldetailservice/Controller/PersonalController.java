@@ -18,4 +18,5 @@ public class PersonalController {
         System.out.println("Message sent to the RabbitMQ Queue Successfully");
 //        return "Message sent to the RabbitMQ Queue Successfully";
     }
+
 }

@@ -50,6 +50,7 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { EmailDialogComponent } from './email-dialog/email-dialog.component';
+import { NoUserDialogComponent } from './no-user-dialog/no-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { EmailDialogComponent } from './email-dialog/email-dialog.component';
     SendEmailComponent,
     HomeNavbarComponent,
     MyProfileComponent,
-    EmailDialogComponent
+    EmailDialogComponent,
+    NoUserDialogComponent
   ],
   imports: [
     MatPaginatorModule,

@@ -90,7 +90,7 @@ export class EducationDetailsComponent implements OnInit{
       (data) => {
         // alert("Education Details Added SuccessFully!!");
         {
-          this._snackBar.open('Education Details Added SuccessFully!!', 'close', {
+          this._snackBar.open('Education Details Added Successfully!', 'close', {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
             duration: this.durationInSeconds * 1000,

@@ -165,6 +165,6 @@ services:
       - 7474:7474
       - 7687:7687
     environment:
-      NEO4J_AUTH: neo4j/admin
+      NEO4J_AUTH: neo4j/password
       NEO4J_dbms_default__database: job4u
 
